@@ -1,0 +1,1562 @@
+WEBVTT
+
+1
+00:12:38.610 --> 00:12:41.490
+Xiangguo Sun: hello, everyone can you hear me, can you hear my voice.
+
+2
+00:12:46.200 --> 00:12:46.590
+Xiangguo Sun: Hello.
+
+3
+00:12:49.830 --> 00:12:52.470
+Xiangguo Sun: Okay, thank you, and this is time that start.
+
+4
+00:12:53.760 --> 00:13:16.980
+Xiangguo Sun: So this is the week eight and now we're going to talk about some basic idea about the lecture in this way, you know in this doctor doctor doctor doctor give us and lecture on the Community detection and then the license right so in today in this way, so actually we need to.
+
+5
+00:13:18.120 --> 00:13:34.080
+Xiangguo Sun: analyze the Community in the social networks and there also is this some very important not content which might exist in your final exam so i'm just going to point it out the important things and.
+
+6
+00:13:35.250 --> 00:13:38.820
+Xiangguo Sun: and give some details analyze this about that.
+
+7
+00:13:39.930 --> 00:13:51.120
+Xiangguo Sun: So, once the Community community in the real world, we have many Community just like we can also named as a group, or just as some clusters.
+
+8
+00:13:51.600 --> 00:14:09.360
+Xiangguo Sun: or clubs right that says that such as the economic growth, spiritual growth and and all the student in our class can also be treated it as the group or the Community, but in honest networks, the Community or more frequently refer to refer to the.
+
+9
+00:14:10.500 --> 00:14:33.000
+Xiangguo Sun: Some individual which helped connection between each other, so in this way, the Community, we have to find these groups in this one as works and we make a name that has said that detection and then we need to evaluate how better how well of our model to find this Community.
+
+10
+00:14:34.170 --> 00:14:51.480
+Xiangguo Sun: Please, know that the Community detection is one of the most important or the fundamental tasks in the social networks, so we were to come to the online social networks, you can see, you can think about many different tasks such as.
+
+11
+00:14:52.710 --> 00:15:05.940
+Xiangguo Sun: I just said, listen to some common tasks here which named arca know the classification, the Community television and Linda prediction and the corral classification and I think this fourth house is the.
+
+12
+00:15:06.840 --> 00:15:17.910
+Xiangguo Sun: Most basic things in the officers networks and many tasks in the real application can be treated it as a one of them are, for example, the another classification is.
+
+13
+00:15:18.420 --> 00:15:30.090
+Xiangguo Sun: to identify the nose labels in their networks right, so we can we can use them to detach the rumors it has the spammers or.
+
+14
+00:15:31.320 --> 00:15:45.900
+Xiangguo Sun: classify users attributes and for the Community detection, which aims to find the cluster or groups in in the social networks and for the link prediction, which will be elaborated in.
+
+15
+00:15:46.500 --> 00:15:58.830
+Xiangguo Sun: The in the next few weeks and which means to predict whether a pair of given node having links or having edges behind them so.
+
+16
+00:15:59.910 --> 00:16:20.370
+Xiangguo Sun: It cover second project just aim to find that that the link the link between each each powerful knows right and that the first time, is about to grab class classification, for example, each tweet or each content in and that's where tempe retweeted or can be Kansas to.
+
+17
+00:16:21.660 --> 00:16:35.640
+Xiangguo Sun: propagate across the network, so it has his own provocation graph, and so we can treat each this graph as the the instance of a of a message, and then we just try to.
+
+18
+00:16:36.420 --> 00:16:52.770
+Xiangguo Sun: classify the crowd as different categories so that's correspond to the the tweets or the contents labels, so this some the basic idea about this for task and I don't want to do and other one you got don't the Community toxins, so one of them.
+
+19
+00:16:55.020 --> 00:17:03.450
+Xiangguo Sun: But Community times, he has his own features, for example, a canal assurance that the cluster or the Community in the Indian.
+
+20
+00:17:04.170 --> 00:17:12.210
+Xiangguo Sun: ocean data which are usually different from the real world real world situations, for example, at the nose in the Community should be.
+
+21
+00:17:12.630 --> 00:17:19.230
+Xiangguo Sun: strongly connected our stories, it should be our internal to the united and there should be.
+
+22
+00:17:19.980 --> 00:17:33.690
+Xiangguo Sun: More links with thing that the Community, other than the length between different communities, so when them that the weaknesses between different nosy but you with a strong Internet connection between the.
+
+23
+00:17:34.830 --> 00:17:45.030
+Xiangguo Sun: And the idea that the the commercialization of the logical router to be completely destroying notate that that's the main difference candidate should.
+
+24
+00:17:46.110 --> 00:17:55.290
+Xiangguo Sun: I don't have any path of don't have any length between each other right, but in the real world This situation cannot be.
+
+25
+00:17:56.640 --> 00:18:04.680
+Xiangguo Sun: cannot be always there because in a in a rowboat we only, we can only find within the Community.
+
+26
+00:18:06.660 --> 00:18:16.470
+Xiangguo Sun: which might have some you know how some some communication between the Community, so we just need to find the Community.
+
+27
+00:18:18.570 --> 00:18:30.060
+Xiangguo Sun: As much as as we can, so in order to find a community which treat we were transport we transform the problem as the grass carp.
+
+28
+00:18:31.380 --> 00:18:49.050
+Xiangguo Sun: And to defy the minimum cart and so what's the card at the graph if you are familiar with our tutorial in which to which we're I just introduced by new business idea about the graph essentials right, and then you will also be familiar with this concept of cards.
+
+29
+00:18:50.400 --> 00:18:56.850
+Xiangguo Sun: that's just a record in a week or two, we talked out the minimum tree and the we call about the spring.
+
+30
+00:18:58.110 --> 00:19:17.790
+Xiangguo Sun: algorithms, so I think I have already introduced introduced some basic idea about the card in the graph and, for example, however, have you remember that, in order to conducted the print algorithm we started from one node and the drug ally here or just just like just like here.
+
+31
+00:19:19.170 --> 00:19:42.600
+Xiangguo Sun: Right and then each other to help their values right so we'll just pick one those and then try another night here so as you can see, this line just can be treated as a card so that's So if you attend up if you familiar with a previous lecture you will be also familiar with this concept.
+
+32
+00:19:43.740 --> 00:19:44.220
+Xiangguo Sun: Is.
+
+33
+00:19:45.300 --> 00:19:45.690
+Xiangguo Sun: OK.
+
+34
+00:19:46.800 --> 00:19:51.870
+Xiangguo Sun: And a cost means the card in the graph means.
+
+35
+00:19:53.970 --> 00:19:54.360
+Xiangguo Sun: means.
+
+36
+00:19:55.410 --> 00:19:56.160
+Xiangguo Sun: Potentially.
+
+37
+00:19:57.210 --> 00:20:12.780
+Xiangguo Sun: The graph into two different set for example in this graph we can find at least three cards for the CAFE which can be which can be divided this word has two parts right another part, and the right part.
+
+38
+00:20:14.220 --> 00:20:26.340
+Xiangguo Sun: that's means is that the parts, the it divides the graph as two separate and also the line be also be treated as a cut and the latency also you can also.
+
+39
+00:20:26.910 --> 00:20:35.010
+Xiangguo Sun: draw other lines as you as you wish to divide this graph as two different or more partitions.
+
+40
+00:20:35.790 --> 00:20:44.520
+Xiangguo Sun: But a more on this card or a month or this line, which is the one to find the minimum the minimum cut means this lunch should across.
+
+41
+00:20:45.150 --> 00:20:57.420
+Xiangguo Sun: As less edges as possible, or why because in our previous slide with that we want to find the Community which have less communication between different.
+
+42
+00:20:58.080 --> 00:21:08.460
+Xiangguo Sun: different communities, so we did the transform the former problems as the as this new problems to find to find a Dominican here.
+
+43
+00:21:09.450 --> 00:21:28.170
+Xiangguo Sun: But in this graph apparently Dominica the minimum card is to Helen eight right because they're all your one ages here and we cannot truth line be because there Hello 12344 agent here so apparently in this situation, the minimum kinda just like a.
+
+44
+00:21:29.340 --> 00:21:42.270
+Xiangguo Sun: That means we just define to Community the love part and the road part but apparently, as you can see the rather have just had one knows that's all clarity comes you know.
+
+45
+00:21:43.380 --> 00:21:52.470
+Xiangguo Sun: As you're in the real world, if you want to find two different clouds or you know, or if we want to find different communities there shouldn't be you know sort of be.
+
+46
+00:21:53.610 --> 00:22:16.890
+Xiangguo Sun: danced partition right but but, but here we to the spine in balance position so that that's not what we want to find so in order to achieve the Church, as the problem we address the problem by relaxing relaxing the retirement of this.
+
+47
+00:22:17.940 --> 00:22:36.300
+Xiangguo Sun: Of this problem, which means we find that the medical problems are what we change the opposite function to consult with them in this Community, this is, for example in our previous situation, we just need to find the minimum card right, so we just need to calculate the minimum.
+
+48
+00:22:37.650 --> 00:22:49.920
+Xiangguo Sun: Number of these guys so so this equation means the ages, that the ages of a card cross with also said, is that the size of the College.
+
+49
+00:22:50.820 --> 00:22:59.700
+Xiangguo Sun: So in our previous situation we just want to find the minimum value of that, but now, as we can see, we divided by the Community size, why because.
+
+50
+00:23:00.150 --> 00:23:16.350
+Xiangguo Sun: If we divided by Community size, we can say, we can expect to find more balanced, the position, for example, in this case, if you just treated this line, as your choice that means.
+
+51
+00:23:18.390 --> 00:23:22.500
+Xiangguo Sun: The card or the size of a quarter should be one right.
+
+52
+00:23:23.730 --> 00:23:28.320
+Xiangguo Sun: In the initial in the initial stage with the minimum cut.
+
+53
+00:23:29.520 --> 00:23:30.090
+Xiangguo Sun: Just a one.
+
+54
+00:23:31.320 --> 00:23:54.780
+Xiangguo Sun: that's now we divided by the petitions size, so we need to calculate the some of the largest other parts which have eight nose and the right side part which have one old and and, as you can see it's larger than one but in our previous slides or in our previous stage.
+
+55
+00:23:56.130 --> 00:24:06.240
+Xiangguo Sun: developers to one so that's mean when we divided by the Community size, we can find this card might not on no longer.
+
+56
+00:24:07.440 --> 00:24:14.520
+Xiangguo Sun: On not the the the optimal choice anymore, because it, there is a virtual been reduced to further.
+
+57
+00:24:16.530 --> 00:24:29.280
+Xiangguo Sun: Also, we can also divided by the degree some not only by the by the position size that's just I think that this just two different ways to you know to.
+
+58
+00:24:29.910 --> 00:24:41.100
+Xiangguo Sun: To to to regular the the all the opportunity of functions, so we caught this function as the ritual college and we call this function as a novelist card.
+
+59
+00:24:42.450 --> 00:24:52.170
+Xiangguo Sun: And what you need to know is to calculate them, so I just want to remind you guys that might be your final exam maybe I just want to give a draft.
+
+60
+00:24:52.770 --> 00:25:04.080
+Xiangguo Sun: Like here or or just similar graph and then I will supply with some some cut, for example, other supplied this card this card or this card.
+
+61
+00:25:04.710 --> 00:25:23.880
+Xiangguo Sun: And then name the ABC and then I will tell i've asked you which card is the best card according to ration card or according to the normalize a card, what do you need to do is to calculate the the value of this three cars right, for example, you, you want to calculate the cost a.
+
+62
+00:25:24.960 --> 00:25:26.940
+Xiangguo Sun: You just need to find.
+
+63
+00:25:28.350 --> 00:25:40.350
+Xiangguo Sun: To follow the previous the previous equation to calculate the value here and we can see this the cut value right because they're only one age across.
+
+64
+00:25:41.100 --> 00:26:00.810
+Xiangguo Sun: Across cut a and then we divided by different parts size, so this car divide the total that as two part this part the part one and part two, so the so this part only have one oh so we divided by one and the remaining part to have.
+
+65
+00:26:02.040 --> 00:26:11.430
+Xiangguo Sun: had eight notes, or we divided by eight right, and then we normalize the two parts, so we just need to add about two and then we got a funny answer.
+
+66
+00:26:11.880 --> 00:26:27.900
+Xiangguo Sun: We can also calculate and nominate code and also, as you can say, if you do rectally calculate the cut value this car the just the one right and we also find that coffee the coffee.
+
+67
+00:26:29.430 --> 00:26:45.840
+Xiangguo Sun: If will be directly get the value is the you tended to kind of evaluate is too, because they are, how to edge cross cross country, but if you calculate the ratio or the organization called you get different answers, for example, or point 45 and open.
+
+68
+00:26:46.890 --> 00:27:00.090
+Xiangguo Sun: And as you can see, it will be compared with the regional CARDS, we can find both the original pilot and the normalization Colorado have cut be is smaller than a so if we.
+
+69
+00:27:01.710 --> 00:27:14.670
+Xiangguo Sun: If we calculate the ratio card or the normalization normalize the card, we can say the best choice or the better choice is can be not cut at right, but if we follow our initial.
+
+70
+00:27:16.050 --> 00:27:27.300
+Xiangguo Sun: motivation if we just did a regular guy did cut value, we can see the cut a better one, but the cut the value is too, so the better choice, it should be cut a.
+
+71
+00:27:27.870 --> 00:27:41.430
+Xiangguo Sun: So that's the reason why we want to calculate this thing because, as we can say cut to be divided ground as two separate route and the weekends, if this is to to.
+
+72
+00:27:42.540 --> 00:27:51.900
+Xiangguo Sun: to sort of grab how you know similar size, you know the upper subscribe headphone old and the loudness want you to refine.
+
+73
+00:27:52.320 --> 00:28:02.430
+Xiangguo Sun: But the cut a divided grab it also at the logic, rather as two separate but they're not you know in Dallas to the other side, as he knows that the rents it's just one of.
+
+74
+00:28:03.000 --> 00:28:12.330
+Xiangguo Sun: Still and there's a reason why we want to calculate the original kind of normalization card and the what you need to do is how to calculate that and I think that maybe he says, your funnels down.
+
+75
+00:28:13.710 --> 00:28:17.700
+Xiangguo Sun: So that's mean that the boss original code and almost got prefer of balance, the partition.
+
+76
+00:28:18.840 --> 00:28:19.380
+Xiangguo Sun: and
+
+77
+00:28:21.270 --> 00:28:34.230
+Xiangguo Sun: Anna in order to find the communities, we have two different ways, the first way is that is based on the spectral clustering and the second week, based on the modularity so just so i'm not going to introduce the way.
+
+78
+00:28:34.800 --> 00:28:41.970
+Xiangguo Sun: The method business that true clustering and this content and might be a little company had a complicated or.
+
+79
+00:28:42.660 --> 00:28:54.630
+Xiangguo Sun: Maybe difficult to to to understand, so no no Gary I just asked you to understand as much as as in cat and I will tell you which are part of will is your final exam okay.
+
+80
+00:28:55.350 --> 00:29:02.820
+Xiangguo Sun: So, before we start this virtual class during we need the first to introduce some concepts of China, then lovelace and metric and.
+
+81
+00:29:03.480 --> 00:29:22.290
+Xiangguo Sun: Actually, the loveliest metric, so I think many of the guys might not fear heard this concept when we talked about the ground, but I think many of the guys had heard the concept of agent metric right so when we talk about the corrals.
+
+82
+00:29:23.550 --> 00:29:33.210
+Xiangguo Sun: We can see how to represent a graph of how to how to is a chronograph in you know in mathematics.
+
+83
+00:29:34.560 --> 00:29:40.590
+Xiangguo Sun: And some students some students, I think of the agent metrics right yeah, but please know that that's the only the one.
+
+84
+00:29:41.010 --> 00:29:50.280
+Xiangguo Sun: way the one method to describe the graph in them in mathematics algebra we have many other ways to you know describe the ground for for a different.
+
+85
+00:29:50.670 --> 00:30:02.490
+Xiangguo Sun: aspect, for example, you can also describe the ground from the from the degree magic so what degree match with the degree magical, this is actually the diagonal matrix the remaining.
+
+86
+00:30:03.300 --> 00:30:13.320
+Xiangguo Sun: elements that I feel rule but that doesn't elements that is just the degree of progress on the nose right yeah so this degree magic can be treated as one.
+
+87
+00:30:14.160 --> 00:30:24.240
+Xiangguo Sun: methods or when asked about autograph and the week, we can also This is described the graph where by the agent metric right, and now I just want to introduce another.
+
+88
+00:30:24.990 --> 00:30:43.980
+Xiangguo Sun: Natural to describe the ground big called stoplight and metrics and the loudness nitrates can be calculated by the by the degree matrix and by the agent metric so that's means all the remaining elements, you know it's just that the.
+
+89
+00:30:45.330 --> 00:30:50.730
+Xiangguo Sun: The opposite and number of off of the original are eaten metric and all the diagonal.
+
+90
+00:30:52.110 --> 00:31:04.440
+Xiangguo Sun: At a month is just the degree from the from the degree magic right and many other students might ask, so how how about what if the ground has.
+
+91
+00:31:05.520 --> 00:31:10.620
+Xiangguo Sun: To look for whatever the graph is directed, but I think.
+
+92
+00:31:11.760 --> 00:31:26.580
+Xiangguo Sun: that's a test out scopes we are out of the scope, we want to talk about so in this lecture is just need to know the empty rhetoric graph and the you just need to know that the graph without any as.
+
+93
+00:31:27.030 --> 00:31:39.600
+Xiangguo Sun: You know self love and that's mean the diagonal elements there's just a degree of a note and the remaining those justin the officer number for the agent metric so that's that that place in that church.
+
+94
+00:31:40.770 --> 00:31:52.710
+Xiangguo Sun: that's a you know very interesting because we have fun in the lab is magic Hello very good opportunity our good qualities, for example, if we use.
+
+95
+00:31:53.970 --> 00:32:08.580
+Xiangguo Sun: All once factors as the the agent bag terribly we can easily find out what happens naturally has a agent vital equal to zero so that's very important qualities and the weekend also find that the.
+
+96
+00:32:09.600 --> 00:32:19.050
+Xiangguo Sun: agent that values, all the age of banners in the lives of magic and done either by the real numbers and the investors are real and always have again.
+
+97
+00:32:20.550 --> 00:32:35.400
+Xiangguo Sun: The real truth, so all this quantity or their importance in you know, a very good content in mathematics so it's so that we can you know conduct many can calculations by others and that trick.
+
+98
+00:32:36.660 --> 00:32:48.630
+Xiangguo Sun: And, and in order to calculate a special the special costume, we also need this metric to have it as capitalism important ideas so in order to calculate that we've formulated.
+
+99
+00:32:51.030 --> 00:32:51.600
+Xiangguo Sun: With formally.
+
+100
+00:32:52.680 --> 00:33:04.470
+Xiangguo Sun: introduce a new manager named X the X is just like this one, and you know each line denote a the corresponding nodes in the graph and each line is.
+
+101
+00:33:05.610 --> 00:33:10.680
+Xiangguo Sun: And each column correspond to the Community, you want to find so basically.
+
+102
+00:33:12.030 --> 00:33:34.230
+Xiangguo Sun: Before we start to find the communication communities, we actually need to assign the total number of communities, you want to find so maybe we just we guess there might exist to Community to communities in the graph that that means this metric is just that and.
+
+103
+00:33:35.370 --> 00:33:42.090
+Xiangguo Sun: Because to, so it is a has own lines and two columns and each column and correspond to.
+
+104
+00:33:43.200 --> 00:33:45.810
+Xiangguo Sun: different communities and.
+
+105
+00:33:46.980 --> 00:33:51.960
+Xiangguo Sun: The D is just to when we talk about is about the diagonal degrade now trick and.
+
+106
+00:33:53.220 --> 00:34:04.620
+Xiangguo Sun: We can say this equation can be treated as the number of agents that are inside military I and some students might not understand because why what why there's.
+
+107
+00:34:06.600 --> 00:34:07.140
+Xiangguo Sun: Okay.
+
+108
+00:34:08.700 --> 00:34:17.430
+Xiangguo Sun: Just one said, why not a D plus at Okay, I just want to answer this question it's very interesting very interesting questions you know.
+
+109
+00:34:18.120 --> 00:34:28.950
+Xiangguo Sun: As we can see the libraries and natural is defined as the degree matrix minor by agent metrics right, but some stores may ask why we not define the metric D class.
+
+110
+00:34:30.090 --> 00:34:45.630
+Xiangguo Sun: will be why we invest a different a different as the minder actually I did some research about that and that's a very interesting, for example, if you just try to calculate.
+
+111
+00:34:46.710 --> 00:34:51.930
+Xiangguo Sun: That inner product, I mean, for example, if you just try to calculate out that.
+
+112
+00:34:53.250 --> 00:35:03.570
+Xiangguo Sun: This things you might find some very interesting results, and you can find you might find that if a week defined the monitor by a.
+
+113
+00:35:04.710 --> 00:35:15.690
+Xiangguo Sun: The final equation, will be very beautiful and very you know, simple, but if we define the last place and as the past by a.
+
+114
+00:35:16.980 --> 00:35:23.340
+Xiangguo Sun: In many calculation, the final you know the final results might not be might not be.
+
+115
+00:35:25.380 --> 00:35:39.510
+Xiangguo Sun: Simple might be, you know added guns so that's not too much things up about the about this, our operations I we just did it is derived from the.
+
+116
+00:35:40.140 --> 00:35:49.620
+Xiangguo Sun: Property jetta from the mathematical OK, so now we come back to this page and I don't want to say why we treat this equation.
+
+117
+00:35:50.310 --> 00:36:14.250
+Xiangguo Sun: As the number of agents that are inside of music, I meant to the unknown and stand out right, but if you attend our previous tutorial you might get this things that that's a showman eight is the agent natural have a graph and we might use a transform multiply by a.
+
+118
+00:36:15.750 --> 00:36:16.860
+Xiangguo Sun: to denote what.
+
+119
+00:36:18.330 --> 00:36:28.860
+Xiangguo Sun: Have you ever remembered this equation in our previous job yeah I think I have already talked about that you know we're in my use the power of a moment, maybe we just use a.
+
+120
+00:36:30.120 --> 00:36:37.140
+Xiangguo Sun: third set of power of a or a second power of a so what what's the meaning of that.
+
+121
+00:36:38.640 --> 00:36:46.890
+Xiangguo Sun: You know the metric a means no die and know the J whether whether know the eye and a note the tree have.
+
+122
+00:36:47.970 --> 00:36:58.320
+Xiangguo Sun: One hobby lately or have direct age right, so the this the meaning of match guy and then we just deal with the we use this guy's.
+
+123
+00:37:00.180 --> 00:37:15.390
+Xiangguo Sun: which can be also treated as the second power of a to denote what to denote brother know the eye and an obituary have to hop lyrics right so If not, I know that you have to have links, we can see.
+
+124
+00:37:16.680 --> 00:37:27.360
+Xiangguo Sun: The corresponding might be equal to non zero of that was right and now that's just a seat try to analyze this guys.
+
+125
+00:37:29.250 --> 00:37:32.310
+Xiangguo Sun: i'm just going to your eraser to clean clean my.
+
+126
+00:37:33.510 --> 00:37:33.930
+Xiangguo Sun: screen.
+
+127
+00:37:35.730 --> 00:37:39.240
+Xiangguo Sun: And as we can say the metric X denote.
+
+128
+00:37:40.470 --> 00:37:46.410
+Xiangguo Sun: The presentation of each node and the credit increase bonding.
+
+129
+00:37:47.520 --> 00:38:00.570
+Xiangguo Sun: increase bonding Community right Okay, so that means this our communities, and these are knows, so that means that X arbitrary means note I.
+
+130
+00:38:02.220 --> 00:38:04.320
+Xiangguo Sun: know that I whether belonged to.
+
+131
+00:38:05.730 --> 00:38:07.320
+Xiangguo Sun: Community Community J.
+
+132
+00:38:09.570 --> 00:38:16.740
+Xiangguo Sun: Right so X means leather note I belong within minutes to check.
+
+133
+00:38:18.060 --> 00:38:20.940
+Xiangguo Sun: Maybe we can use this to denote the.
+
+134
+00:38:22.200 --> 00:38:31.140
+Xiangguo Sun: denote that means okay so let's try to calculate the transpose of X and the transport of X.
+
+135
+00:38:32.160 --> 00:38:48.840
+Xiangguo Sun: coming to this this word so each line become the Community, but each column become corresponding nodes right so that's mean that that transpose of X means means what means each other.
+
+136
+00:38:50.610 --> 00:38:51.270
+Xiangguo Sun: A.
+
+137
+00:38:52.440 --> 00:38:56.550
+Xiangguo Sun: target community has corresponding note J.
+
+138
+00:39:00.720 --> 00:39:01.170
+Xiangguo Sun: Right.
+
+139
+00:39:02.250 --> 00:39:20.460
+Xiangguo Sun: And now we calculate we just further to remove this metric and that's see that the try to consider what's the meaning of X transpose multiply by X what's that mean that means.
+
+140
+00:39:23.730 --> 00:39:25.290
+Xiangguo Sun: Community I.
+
+141
+00:39:26.490 --> 00:39:27.120
+Xiangguo Sun: Has.
+
+142
+00:39:28.140 --> 00:39:30.300
+Xiangguo Sun: A Member node name Jay.
+
+143
+00:39:31.920 --> 00:39:34.830
+Xiangguo Sun: And this Nova Jay has also.
+
+144
+00:39:37.170 --> 00:39:40.080
+Xiangguo Sun: Missing another Community okay.
+
+145
+00:39:43.620 --> 00:39:47.880
+Xiangguo Sun: Right so actually you can say this.
+
+146
+00:39:50.280 --> 00:39:55.650
+Xiangguo Sun: metric can be treated it as the number of nodes here inside Community I.
+
+147
+00:39:56.910 --> 00:40:10.230
+Xiangguo Sun: Right, and now we just to put this metric back into the original equations because the matrix a is just the different nodes.
+
+148
+00:40:11.760 --> 00:40:21.360
+Xiangguo Sun: presentations in whether they have an agent that so so that's me among all this about here's how many of them how been conducted by ages.
+
+149
+00:40:22.290 --> 00:40:40.680
+Xiangguo Sun: So that's the menu, while we say that that's equations and never agent that are inside the Community hi okay so that's how how I understand this equation, and I guess many other guys might not might still cannot understand what I said right.
+
+150
+00:40:41.910 --> 00:40:55.650
+Xiangguo Sun: But nobody about that just doesn't try to consider that after those tutorial and if you have your new idea about this questions you're welcome to post any ID thinkings in the piazza.
+
+151
+00:40:56.820 --> 00:41:00.930
+Xiangguo Sun: Okay, so Similarly, we can also treat this.
+
+152
+00:41:02.310 --> 00:41:11.610
+Xiangguo Sun: Like also treated this equation, as a number of age that and that's to the mentoring opportunity I, and you can also try to you know to attend.
+
+153
+00:41:12.300 --> 00:41:29.550
+Xiangguo Sun: This process as what I do, and then you can just try to consider what what many, and then we can come come to the conclusion that this equation can be treated as the number of agents in the card that the printer that dignity, I don't know.
+
+154
+00:41:31.350 --> 00:41:40.860
+Xiangguo Sun: So that's the reason why we replace the original equation, as the metric form because this guy's cannot be calculated in mathematics right, so we just.
+
+155
+00:41:41.250 --> 00:41:56.100
+Xiangguo Sun: grab that Batman better match performance and then we've got the final equation here and, as you can see, this adjuster, and this is just the last lesson metric and this guy seems like you know, since like.
+
+156
+00:41:57.750 --> 00:41:59.370
+Xiangguo Sun: A project in function, you know.
+
+157
+00:42:00.810 --> 00:42:11.460
+Xiangguo Sun: The X, this is just the project each node to value right, and if you have to come communities, we have to.
+
+158
+00:42:12.090 --> 00:42:24.390
+Xiangguo Sun: Each knows how to value, and if we have 10 communities each node has turned out so it's just like each line just it can be just like that the feature of a note right.
+
+159
+00:42:25.080 --> 00:42:36.510
+Xiangguo Sun: So we just can be treated as a feature so but that's mean the feature transformed by the lab is metric and then we try to find a minimum of that.
+
+160
+00:42:40.170 --> 00:42:48.720
+Xiangguo Sun: And that and that's the reason why we're trying to find the minimum of these equations but this and then i'm going to.
+
+161
+00:42:50.490 --> 00:42:56.550
+Xiangguo Sun: tell you how to find the Community by this equation and.
+
+162
+00:43:00.480 --> 00:43:15.990
+Xiangguo Sun: As well as what we will what I have said, we can treat each line as the know the feature right, so now we want to find the different clusters and if we have some data mining.
+
+163
+00:43:17.670 --> 00:43:24.870
+Xiangguo Sun: courses that, then you might be fun, we can use the class current method to you know to divide this nose.
+
+164
+00:43:25.830 --> 00:43:35.250
+Xiangguo Sun: into different population So here we does a trade with the with the team is mothers to find the clusters and and the number of cluster equal to two.
+
+165
+00:43:35.880 --> 00:43:46.140
+Xiangguo Sun: So each line, it can be treated as know the features and we were feeding this feature to the kidneys model, and then the output, the different positions, and then we can find.
+
+166
+00:43:47.160 --> 00:43:59.490
+Xiangguo Sun: This three and those are the three nodes in correspond to the latter part and then a three node crap on to the band called so the Community should be about it here.
+
+167
+00:44:00.060 --> 00:44:15.210
+Xiangguo Sun: So that means the track that's better classroom actually translate the Community finding as clustering method right the Community that the corral as not.
+
+168
+00:44:16.500 --> 00:44:24.060
+Xiangguo Sun: Is such a complicated and cannot be treated as know as a euro samples in your.
+
+169
+00:44:25.260 --> 00:44:40.620
+Xiangguo Sun: Practical data mining us task so when you first get to extract the features of each node so what's the feature of that and then with this that maybe we can construct this.
+
+170
+00:44:41.340 --> 00:44:56.430
+Xiangguo Sun: metric to to you know to to to get some some not know the features, so we just have constructed methods and then we calculate the agent vectors and we treat each of the end of this node, as you know, as the.
+
+171
+00:44:57.960 --> 00:45:11.730
+Xiangguo Sun: Other features and then we treated it with filters feature to the kidneys models and then the output is the final presentation that to the death of the basic idea about as clustering and I think you just need to understand.
+
+172
+00:45:12.900 --> 00:45:13.500
+Xiangguo Sun: The.
+
+173
+00:45:14.520 --> 00:45:23.580
+Xiangguo Sun: The model that's enough you don't need to understand how to calculate that and how to do that so maybe you just need to understand what I said here.
+
+174
+00:45:24.150 --> 00:45:36.450
+Xiangguo Sun: So, given the lapis nitric wispy firstly find that the top K out innovators are because they trust down to the smallest by those and computed and denote as X.
+
+175
+00:45:37.110 --> 00:45:49.920
+Xiangguo Sun: So Center some sort of my students cannot understand why we try to find the aging factory correspond to the smallness engine values, why do we.
+
+176
+00:45:50.490 --> 00:46:09.450
+Xiangguo Sun: Why did we not try to find the top key NGO vector correspond to the to the largest it agent letters what what while it's fine to choose to use the smallest anywhere else, and if you want to understand that you might need more advanced knowledge.
+
+177
+00:46:10.590 --> 00:46:11.730
+Xiangguo Sun: about the graph theory.
+
+178
+00:46:13.050 --> 00:46:28.380
+Xiangguo Sun: And now i'm just going to do some some in this show explanation, but if you cannot understand what that sounds no worry about that okay so to travel back to China some what what what I said so.
+
+179
+00:46:29.790 --> 00:46:34.530
+Xiangguo Sun: Basically, this is that to say this, this is the graph.
+
+180
+00:46:35.550 --> 00:46:43.740
+Xiangguo Sun: And that is the we have we have function which can map each node to a to a.
+
+181
+00:46:45.570 --> 00:46:50.130
+Xiangguo Sun: city value here okay so actually we just use.
+
+182
+00:46:52.380 --> 00:47:03.870
+Xiangguo Sun: This to denote their value Okay, so this means their value, my less than zero and negative value and this mean theory there might be positive.
+
+183
+00:47:05.040 --> 00:47:22.890
+Xiangguo Sun: And as we can say ah, in a draft we usually take the assumption that the nose conducted by and he sort of be you know, should be similar so that's me this value and this vital you know shouldn't be similar.
+
+184
+00:47:24.330 --> 00:47:34.890
+Xiangguo Sun: But this is true, and this value, you know we're we're not we don't ask them to to to guesstimate so that that means if you treat this.
+
+185
+00:47:36.060 --> 00:47:39.120
+Xiangguo Sun: knows as the locations on the ground.
+
+186
+00:47:40.260 --> 00:47:50.010
+Xiangguo Sun: You can just draw a you know, a curb or drug plan, and you can see, this picture, just like the mountain you know the difference knows.
+
+187
+00:47:50.490 --> 00:48:03.330
+Xiangguo Sun: Just like a mountain today the different nodes if they have the connected ages this this rupee closely, there should be close but, but if a note in repair for no they don't have they don't have.
+
+188
+00:48:04.380 --> 00:48:06.690
+Xiangguo Sun: A connection there might.
+
+189
+00:48:07.860 --> 00:48:08.790
+Xiangguo Sun: change it hugely.
+
+190
+00:48:10.350 --> 00:48:18.570
+Xiangguo Sun: And that means in this graph we can't you know we can't mirror some changes about this about it and.
+
+191
+00:48:19.200 --> 00:48:40.710
+Xiangguo Sun: We can see some sometimes the change it, it does for some moves right, but sometimes that the change is you know gymnastic so how to mirror the degree of these changes and then some mathematics some students or some research and fine, we can actually.
+
+192
+00:48:41.790 --> 00:48:45.600
+Xiangguo Sun: decomposing decomposing decompose the.
+
+193
+00:48:46.740 --> 00:48:53.010
+Xiangguo Sun: lovely symmetric two different agent values and, as we can say the larger.
+
+194
+00:48:54.630 --> 00:48:55.440
+Xiangguo Sun: The larger.
+
+195
+00:48:57.030 --> 00:49:04.500
+Xiangguo Sun: agent values, corresponding to a agent right, so if we treat this factor as an F.
+
+196
+00:49:05.670 --> 00:49:29.010
+Xiangguo Sun: That we can find the project of the value chain, the hugely or change dramatically, but if for our agent values of various more the corresponding the crass about the agent voucher if we treated it as dumb as we can see the project has value change smooth.
+
+197
+00:49:31.140 --> 00:49:45.870
+Xiangguo Sun: Care industry innocent what is that so that means if we're trees if we choose that the smallest eight new values and the truth that the corresponding agent factors as projecting belters or as a project or as.
+
+198
+00:49:46.800 --> 00:50:00.090
+Xiangguo Sun: We can find you know the project of the value chain very smooth that's a very cute quality that that's a very good quality, because they are more similar than the.
+
+199
+00:50:01.710 --> 00:50:02.550
+Xiangguo Sun: More similar.
+
+200
+00:50:04.050 --> 00:50:09.450
+Xiangguo Sun: in real life situations, for example, if I am front of you.
+
+201
+00:50:10.350 --> 00:50:22.320
+Xiangguo Sun: We might have very similar you know hobbies topics, or even personality right, but if we don't know each other, we don't have any notion, we might be very different person.
+
+202
+00:50:22.830 --> 00:50:32.550
+Xiangguo Sun: persons and we add trade talk about this topic in our previous slides Have you ever remember the concept of names that have affiliate.
+
+203
+00:50:33.990 --> 00:50:49.620
+Xiangguo Sun: Right, so the hammer Philippines even to people who have a notion, they will become similar estimator right so following this concept of following this you know motivations, we aim to find some protection function F.
+
+204
+00:50:50.640 --> 00:51:07.260
+Xiangguo Sun: with him to find this over to project the notes to two different value, but we want to try to make sure the battle changes very smooth on the graph and that's the reason why we want to find the smallest and the vitals and to find this angel factory to compute as a graph.
+
+205
+00:51:08.280 --> 00:51:15.450
+Xiangguo Sun: And then we construct you know constructed the notice dangerous by this way having gotten this features, we just.
+
+206
+00:51:15.930 --> 00:51:26.040
+Xiangguo Sun: created this feature to the chemists marlo and then to try to find different art classes and some students might also asked me this question, so in this.
+
+207
+00:51:26.910 --> 00:51:34.860
+Xiangguo Sun: slide with it we tried to find a top caitlin of actors right but, as we can say the largest metric accurate can help.
+
+208
+00:51:35.790 --> 00:51:46.980
+Xiangguo Sun: And it'll doctors so sheldon you tell me to find the smallest agent values but there, how many videos so that to say that the agent vital might be 4.1.
+
+209
+00:51:47.580 --> 00:52:06.330
+Xiangguo Sun: upon the 2.3 or four and it into upon ny so you tell me to find that the smallest the smallest integrated, but how many agent value that I found and actually in the real situation in the real practical applications that K, we just.
+
+210
+00:52:07.380 --> 00:52:10.380
+Xiangguo Sun: familiar with the K equal to the number of.
+
+211
+00:52:11.490 --> 00:52:23.970
+Xiangguo Sun: Communities you want to find but that's not the strictly that that's not that the strict demand that actually did you can adjust the decay, but, as you can say, if you find all the.
+
+212
+00:52:25.440 --> 00:52:30.990
+Xiangguo Sun: values that means you're also include include some you know some.
+
+213
+00:52:32.820 --> 00:52:34.320
+Xiangguo Sun: High Frequency.
+
+214
+00:52:35.640 --> 00:52:42.060
+Xiangguo Sun: innovators in your model right but we actually just want to find some low frequency.
+
+215
+00:52:43.080 --> 00:52:50.790
+Xiangguo Sun: angel voters so maybe the best ways to only choose one but, but if you only choose one definitely the feature just a one.
+
+216
+00:52:51.900 --> 00:53:05.160
+Xiangguo Sun: Right, so that might reduce the performance of the bounce rate has so many which has two to three or four and you know, Mr says to adjust it according to herself so in the in the practice.
+
+217
+00:53:05.700 --> 00:53:26.520
+Xiangguo Sun: We just did our we're used to to find the key agent valid through visitation to be equal to the number of candidates, but not but that's not strictly the market and having failed the audience feature to the Indians values are the communities, and then we can try to find the.
+
+218
+00:53:28.380 --> 00:53:33.030
+Xiangguo Sun: transcripts of that so we shouldn't eat cloud story as dignity at work front.
+
+219
+00:53:34.290 --> 00:53:43.560
+Xiangguo Sun: Okay, so that's the class terrain, that the spectral clustering and up to now, I think some of some of the guys had already know why we caught.
+
+220
+00:53:44.700 --> 00:54:01.320
+Xiangguo Sun: We call this Mailer as bagshaw clustering because, as you can see we're actually treated with regular treated the agent values, as you know, as the frequency of graph right and the frequency crust on to.
+
+221
+00:54:02.130 --> 00:54:15.960
+Xiangguo Sun: Their own projecting functions so it's just a system like the sabbatical calculations, in the second a process of courses, so we just named that that the special class trip.
+
+222
+00:54:16.890 --> 00:54:26.220
+Xiangguo Sun: And also, we have another new mother named model modular fashion magazine ization and just as a way to try to answer some questions.
+
+223
+00:54:28.740 --> 00:54:42.270
+Xiangguo Sun: or some stuff that Jay said how do we choose harmon agent voucher to yeah I just answered that question tested before some saying like yeah you can treat the last line something.
+
+224
+00:54:43.620 --> 00:54:49.200
+Xiangguo Sun: Related to those digital ocean, but I think that that the province is really can be also you know.
+
+225
+00:54:49.830 --> 00:55:05.160
+Xiangguo Sun: treated it as the project and functions, for example when either function to match each user to you know to real value in the in the little space, so we we usually call that the project and function.
+
+226
+00:55:06.510 --> 00:55:10.380
+Xiangguo Sun: is different from the piece a picking the top a larger.
+
+227
+00:55:11.610 --> 00:55:12.960
+Xiangguo Sun: pieces are.
+
+228
+00:55:14.490 --> 00:55:28.710
+Xiangguo Sun: Sincere how to produce a pneumatic on please, yes, you can have it there has some similarity but they're all different and and, if I remember right that the PC mother, they can be treated as an attendee.
+
+229
+00:55:29.550 --> 00:55:37.140
+Xiangguo Sun: directly from the special guest today, I think you need to understand that to read more reference about that, but I don't remember it clearly.
+
+230
+00:55:38.430 --> 00:55:41.010
+Xiangguo Sun: i'm reminded me something yes and.
+
+231
+00:55:42.060 --> 00:55:42.570
+Xiangguo Sun: OK.
+
+232
+00:55:43.620 --> 00:55:47.430
+Xiangguo Sun: So now we just let's continue continue to.
+
+233
+00:55:49.020 --> 00:55:55.830
+Xiangguo Sun: Continue the other methods to detect Community Member modularity so the modularity is not a.
+
+234
+00:55:57.210 --> 00:55:58.770
+Xiangguo Sun: Strict but it's not a.
+
+235
+00:55:59.820 --> 00:56:12.420
+Xiangguo Sun: strange concept, because we just wonder about that, before right, you know that the audacity and the modularity and many other different concept, so in the following.
+
+236
+00:56:13.560 --> 00:56:21.690
+Xiangguo Sun: slides maybe we just need to record the concept what we had talked about the previous slides so.
+
+237
+00:56:24.270 --> 00:56:25.950
+Xiangguo Sun: Some of some of the guys May.
+
+238
+00:56:28.080 --> 00:56:28.620
+Xiangguo Sun: say.
+
+239
+00:56:30.180 --> 00:56:31.320
+Xiangguo Sun: This concepts, you know.
+
+240
+00:56:32.550 --> 00:56:53.460
+Xiangguo Sun: What we call that what that we call the the configure model, if I remember that yeah the configuration model, but actually the configuration model, the only purpose of introduced the complete configuration mode it just to let you understand why.
+
+241
+00:56:55.320 --> 00:57:09.360
+Xiangguo Sun: Why we you know inside the modularity in this way, or why we use this equation to denote the probability between different nodes to highly ages, so that means, if you have already know.
+
+242
+00:57:10.440 --> 00:57:25.200
+Xiangguo Sun: How it comes you actually don't need to understand now the configuration models right because the only purpose to introduce this morning, just to help you understand them better okay so let's just take a brief overview about that so.
+
+243
+00:57:27.510 --> 00:57:35.070
+Xiangguo Sun: For the galen did great sequence with the first generate and those and you know each node for.
+
+244
+00:57:36.300 --> 00:57:39.600
+Xiangguo Sun: Some stats right, and then we just need to.
+
+245
+00:57:40.800 --> 00:57:53.280
+Xiangguo Sun: follow in a follow the the take rate sequence and try to connect them each other so as you can see, this case there's a case of desiccated be or how the equal probability.
+
+246
+00:57:53.700 --> 00:58:03.690
+Xiangguo Sun: And the your task is to calculate the probability of this to know that, having having connected among all of the.
+
+247
+00:58:04.410 --> 00:58:14.970
+Xiangguo Sun: Total total to a cadence right, so how to calculate that maybe we need to first give your degree techcrunch here and what you need to know is, is to.
+
+248
+00:58:15.570 --> 00:58:34.170
+Xiangguo Sun: repeat this node according to this value or to the degree, for example, this know degrades to repair that ties and we also repeated the second know Thailand twice, so if this the greatest sorry, maybe we just repeat at certain times right and after that we randomly shuffle.
+
+249
+00:58:35.460 --> 00:58:39.720
+Xiangguo Sun: The sequence we run us through a sequence and connected the.
+
+250
+00:58:40.290 --> 00:58:50.310
+Xiangguo Sun: The agent knows, so that means another way another way to should be ignited, so we should have B one B two and a reduced rate and ethical kinds of we wouldn't be talking a bit right.
+
+251
+00:58:50.580 --> 00:59:04.290
+Xiangguo Sun: And the which will be a three ignited yes and the week three we weren't connected so according to this short form we can generate a case here, and this case it just a normal case among all.
+
+252
+00:59:05.310 --> 00:59:10.680
+Xiangguo Sun: This total cases so just a one is right also you can also.
+
+253
+00:59:11.730 --> 00:59:17.070
+Xiangguo Sun: get a different answer, because it is the brand Michelle for some Maybe you can get this answer if you can do this as you.
+
+254
+00:59:17.880 --> 00:59:28.470
+Xiangguo Sun: can either we went to be one so that's me to have the self agent here, and then, which would be three to reach three different kinds of the here so as you can see, this also they're bringing their typical kisses kisses.
+
+255
+00:59:29.490 --> 00:59:32.100
+Xiangguo Sun: So not too much different.
+
+256
+00:59:33.210 --> 00:59:39.030
+Xiangguo Sun: Important in the information here, and then you can do to find out why we.
+
+257
+00:59:40.290 --> 00:59:47.760
+Xiangguo Sun: Try to define the possibility in this way, maybe you can use the configuration model to help you to understand that, I think, maybe in the.
+
+258
+00:59:48.420 --> 01:00:05.790
+Xiangguo Sun: You know, in your final exam maybe I can just give it the the wrench over here, and then, as we are to to draw the corresponding graph here, so I think that might also very important here, because it does it for for the for the for the.
+
+259
+01:00:07.140 --> 01:00:11.100
+Xiangguo Sun: exam but I don't think it's very important to end to have understand that.
+
+260
+01:00:13.260 --> 01:00:14.190
+Xiangguo Sun: Okay, so.
+
+261
+01:00:18.360 --> 01:00:28.230
+Xiangguo Sun: And now we come to the normalized modularity with a little different from our previous concept, because it never prepare concerned we did we only.
+
+262
+01:00:28.650 --> 01:00:53.850
+Xiangguo Sun: calculate you know the total graph modularity right but, but now we will we, you know we particularly at different sub graph so the also trained some your kingdom allows the here so for permission he acts we firstly defined a distance the distance is the ah real connections.
+
+263
+01:00:55.050 --> 01:01:08.910
+Xiangguo Sun: Mother bye expected connections and don't forget this, this is the pervasive between different nodes getting connected right so so is the real connection, and this is better the condition so we've been married the.
+
+264
+01:01:10.440 --> 01:01:19.320
+Xiangguo Sun: difference of measure the distance of that, and this is just for one edition, and we can play for different positions, so we can tell you that the.
+
+265
+01:01:19.950 --> 01:01:26.790
+Xiangguo Sun: generalize distance and the phenomena as a version of this in terms of defined as modularity so we just.
+
+266
+01:01:27.720 --> 01:01:41.670
+Xiangguo Sun: treat this as a way to end the, as you can see, this might be a little similar to our previous model but but but have also some difference right because this maharaja accurate defined based on different petitions, not the whole graphs.
+
+267
+01:01:43.230 --> 01:02:00.240
+Xiangguo Sun: And, and for this, the things I don't send you guys to understand that we don't need to say about having defined of modularity in this way that the next step is to you know, to find the the better choice P, that the better choice, he to to make this about a smaller.
+
+268
+01:02:01.980 --> 01:02:04.560
+Xiangguo Sun: So the company COM, the optical mother's.
+
+269
+01:02:06.390 --> 01:02:06.870
+Xiangguo Sun: Okay.
+
+270
+01:02:09.780 --> 01:02:18.270
+Xiangguo Sun: And haven't found that many evaluations, the most important thing is to evaluate how how well our business models.
+
+271
+01:02:18.630 --> 01:02:23.700
+Xiangguo Sun: And please know that this part is very important because they have some calculation confidently in.
+
+272
+01:02:24.180 --> 01:02:36.570
+Xiangguo Sun: front of them, and the most important things you need to calculate know to add one score to be core precision or minority or the karate or calculate that so before the capital that we just given some.
+
+273
+01:02:37.980 --> 01:02:53.880
+Xiangguo Sun: Some basic definition Okay, so it is a sin be coming to two hours so okay so let's try to have a little break and we'll come back a few minutes later okay.
+
+274
+01:12:49.020 --> 01:12:50.610
+Xiangguo Sun: hello, everyone can you hear me now.
+
+275
+01:12:55.320 --> 01:12:56.040
+Xiangguo Sun: I come back.
+
+276
+01:12:58.230 --> 01:12:59.550
+Xiangguo Sun: Okay, good Thank you.
+
+277
+01:13:02.400 --> 01:13:05.070
+Xiangguo Sun: Okay okay good Thank you so that let's continue.
+
+278
+01:13:06.120 --> 01:13:12.480
+Xiangguo Sun: This apart, is the most important part in this Wednesday, this week, so we need to calculate some different.
+
+279
+01:13:14.550 --> 01:13:30.840
+Xiangguo Sun: index, and now we just need to into some basic idea of a basic concepts so what's the perfect the perfect community, which means to overcharge Incirlik 90 of the same time right, but actually what we can offer to achieve this goal in the real world population.
+
+280
+01:13:31.980 --> 01:13:32.340
+Xiangguo Sun: More.
+
+281
+01:13:33.870 --> 01:13:43.800
+Xiangguo Sun: Common situation is is in one Community we might have different kinds of nose, so we just want you.
+
+282
+01:13:44.820 --> 01:13:47.430
+Xiangguo Sun: In matter how well this model perform.
+
+283
+01:13:48.810 --> 01:13:49.350
+Xiangguo Sun: and
+
+284
+01:13:52.200 --> 01:13:54.690
+Xiangguo Sun: What I lost my mouse.
+
+285
+01:13:55.710 --> 01:14:12.480
+Xiangguo Sun: Okay, so the first things is about some concepts about precision precision P, the record are So the first thing is you guys need to calculate to know as to how to calculate to this to.
+
+286
+01:14:12.990 --> 01:14:24.330
+Xiangguo Sun: A different values, and if you took if you have a choice that the data mining or machine learning courses, I think you will not be to.
+
+287
+01:14:25.320 --> 01:14:37.740
+Xiangguo Sun: string of that so to concept, right at the very positive but it's something might be a little different in a different phone your previous situation is we actually.
+
+288
+01:14:38.850 --> 01:14:40.650
+Xiangguo Sun: have some you know.
+
+289
+01:14:42.240 --> 01:14:46.050
+Xiangguo Sun: Different or has some have some individual.
+
+290
+01:14:47.460 --> 01:14:58.770
+Xiangguo Sun: Definition about the true positive and the true negative, for example, a true positive means with similar members peers are assigned to the same communities.
+
+291
+01:14:59.550 --> 01:15:12.900
+Xiangguo Sun: were treated that as a credit is in some reason that this not the nose the nose hairs and the similar nose hairs assigned to the same communication, for example.
+
+292
+01:15:14.790 --> 01:15:18.960
+Xiangguo Sun: In this rabbit try to calculate the to the true positive true partner here.
+
+293
+01:15:20.520 --> 01:15:27.060
+Xiangguo Sun: So how to calculate a true positive way, according to the destination, we need to find the similar.
+
+294
+01:15:28.680 --> 01:15:29.880
+Xiangguo Sun: Note pairs.
+
+295
+01:15:32.250 --> 01:15:37.020
+Xiangguo Sun: In the same community right OK, so the same know the pair.
+
+296
+01:15:38.220 --> 01:15:41.010
+Xiangguo Sun: In the same community for this Community.
+
+297
+01:15:42.450 --> 01:15:59.820
+Xiangguo Sun: How many hairs from the same note the same the same level, maybe this one, this one pair two pair three four actually just a combination of this one right, so we came is the combination of.
+
+298
+01:16:01.290 --> 01:16:06.390
+Xiangguo Sun: Following Those are just two those two notes and the order to calculate that that, as you can use them.
+
+299
+01:16:09.060 --> 01:16:11.250
+Xiangguo Sun: I think my calculated in this way.
+
+300
+01:16:12.690 --> 01:16:16.200
+Xiangguo Sun: And I minor to.
+
+301
+01:16:17.250 --> 01:16:17.700
+Xiangguo Sun: This way.
+
+302
+01:16:18.990 --> 01:16:26.100
+Xiangguo Sun: Right so actually you need to know how to calculate that Okay, so this is a for the.
+
+303
+01:16:27.390 --> 01:16:27.930
+Xiangguo Sun: The read.
+
+304
+01:16:29.520 --> 01:16:40.200
+Xiangguo Sun: The rather simple round numbers and we can't we need also to calculate this one, but in this one, we just need to calculate what one.
+
+305
+01:16:40.590 --> 01:16:50.460
+Xiangguo Sun: To two and, apparently, is it with your friends, so we don't consider it Okay, so how about this notate notate you know, has two different those.
+
+306
+01:16:51.420 --> 01:17:16.140
+Xiangguo Sun: Are the first the blue node has six so we We selected any to knows from this six nodes right and, similarly, we select any no tears one is to note and don't calculate the total number, so the total number is 26 so that's the true positive is 26.
+
+307
+01:17:17.430 --> 01:17:26.910
+Xiangguo Sun: Also, the true negative is different, but nose hairs to India different noticed.
+
+308
+01:17:28.470 --> 01:17:38.490
+Xiangguo Sun: Right so that's made the T shirt to wear T T T here is different nodes in different no date so that's mean if we consider this note.
+
+309
+01:17:39.150 --> 01:18:00.960
+Xiangguo Sun: Is Bruno it should be connected by the rest randall in different Community so there's a two by the pedal up by one and also this 12345 it find out here and it's so connected to the blue nose in other communities wise will come Community here.
+
+310
+01:18:02.580 --> 01:18:03.000
+Xiangguo Sun: Okay.
+
+311
+01:18:06.510 --> 01:18:26.670
+Xiangguo Sun: So follow this exam you can calculate this this and all this thing and then you might be asked to calculate the precision and recall and some students might have noticed that in this example we only have two Community guys, but the destination.
+
+312
+01:18:27.840 --> 01:18:44.640
+Xiangguo Sun: It just that communities, so the total come into numbers, more than two so if we have another camera here, for example, this is my route and this might this might are.
+
+313
+01:18:46.920 --> 01:18:48.120
+Xiangguo Sun: Blue maybe.
+
+314
+01:18:49.410 --> 01:19:03.900
+Xiangguo Sun: Then, how the capital did that or that or how to calculate this guys and apparently the tp it's just following the previous week right, but when you try to calculate the teton.
+
+315
+01:19:04.950 --> 01:19:11.310
+Xiangguo Sun: You need connected at this guy's to this to nose and also to this note.
+
+316
+01:19:12.420 --> 01:19:18.150
+Xiangguo Sun: right that may be a little different but they all follow the same idea.
+
+317
+01:19:20.460 --> 01:19:38.670
+Xiangguo Sun: What I mentioned, there why I Muslim this because I think your findings are maybe you're you might be asked to calculate the precision or the recall that things so you need to force you to calculate this big thing right.
+
+318
+01:19:40.110 --> 01:19:51.990
+Xiangguo Sun: And, apparently, you know in our previous slides if if you're asking some some calculations if the equation is really difficult or complicated that we might.
+
+319
+01:19:52.650 --> 01:20:16.110
+Xiangguo Sun: provide this equation to you in your exam right, but in this test as we can see, this is not equation, this is not equation not equation equation so that's the main in this case, if you're asked to calculate the precision, what I can give you is only this.
+
+320
+01:20:17.670 --> 01:20:26.850
+Xiangguo Sun: or this right, but you still need to know how to calculate a true positive enjoyment of it is actually a win when know.
+
+321
+01:20:27.570 --> 01:20:37.590
+Xiangguo Sun: The definition and they too different from our previous situation because the other end of our previous task that is that the notification on another house.
+
+322
+01:20:38.160 --> 01:20:59.670
+Xiangguo Sun: We also focus on the nose not know pairs a here what we were to their peers as one credit discern or wrong decision right but but in most cases, we just a tricky one note as one credit ation of one different or one a wrong decision.
+
+323
+01:21:01.110 --> 01:21:13.320
+Xiangguo Sun: So doesn't mean, I can only give you this equation, but you need to be familiar with a definition of this guy's is dasher when maybe you are, you might encounter more than two minutes, so I think that's very important.
+
+324
+01:21:14.970 --> 01:21:24.750
+Xiangguo Sun: And having calculated the precision and recall, then you can use this equation to direct say get the F1 score and it's also very important.
+
+325
+01:21:26.550 --> 01:21:27.750
+Xiangguo Sun: So you just need to calculate that.
+
+326
+01:21:28.050 --> 01:21:28.410
+Okay.
+
+327
+01:21:33.930 --> 01:21:35.730
+Xiangguo Sun: Forgive me just need to quit at the beach.
+
+328
+01:21:37.560 --> 01:21:37.800
+Xiangguo Sun: Okay.
+
+329
+01:21:39.390 --> 01:22:05.280
+Xiangguo Sun: And the besides the F1 precision and recall, you also need to be familiar with the purity and the purity I think it's also very easy to to to understand you know that the ci is the members into the time and the lj as the labels in all communities, so this just.
+
+330
+01:22:06.750 --> 01:22:10.770
+Xiangguo Sun: The Internet international history different.
+
+331
+01:22:12.300 --> 01:22:22.830
+Xiangguo Sun: South so you just to find the maximum number and calculate the summation of that now, for example, are in this graph and the total number.
+
+332
+01:22:23.880 --> 01:22:31.530
+Xiangguo Sun: Of a nose 12345 it voting right, so we don't do a 14 justice into this one, and in this case.
+
+333
+01:22:34.920 --> 01:22:37.500
+Xiangguo Sun: That say how to calculate that.
+
+334
+01:22:38.880 --> 01:22:42.150
+Xiangguo Sun: The see one's done number in okay so.
+
+335
+01:22:44.250 --> 01:22:59.400
+Xiangguo Sun: Is the set of Members incremental Okay, so we should see one here is 123456 right Okay, so this have a six and.
+
+336
+01:23:02.610 --> 01:23:08.070
+Xiangguo Sun: The lj the set of insulin level checking all communities.
+
+337
+01:23:09.390 --> 01:23:12.900
+Xiangguo Sun: Okay, so first all this node.
+
+338
+01:23:14.370 --> 01:23:15.660
+Xiangguo Sun: understand this.
+
+339
+01:23:17.100 --> 01:23:19.800
+Xiangguo Sun: Is what this is all blue.
+
+340
+01:23:21.450 --> 01:23:21.870
+Xiangguo Sun: Note.
+
+341
+01:23:25.170 --> 01:23:35.250
+Xiangguo Sun: Right so first we calculate all numbers in cluster one so it's it's up to us to notify class one.
+
+342
+01:23:36.300 --> 01:23:38.250
+Xiangguo Sun: And it should be intercepted this.
+
+343
+01:23:39.330 --> 01:23:51.600
+Xiangguo Sun: All blue nose so that's me is tested that intersection of this node and all these nodes this note there's no the snow the snow is all.
+
+344
+01:23:52.950 --> 01:23:55.500
+Xiangguo Sun: Right and the insurgent it just here.
+
+345
+01:23:56.640 --> 01:23:58.110
+Xiangguo Sun: Since the number.
+
+346
+01:23:59.130 --> 01:23:59.670
+Xiangguo Sun: Two one.
+
+347
+01:24:01.980 --> 01:24:05.100
+Xiangguo Sun: Right, this one is targeted for.
+
+348
+01:24:06.780 --> 01:24:08.910
+Xiangguo Sun: What it is targeted for.
+
+349
+01:24:12.030 --> 01:24:15.390
+Xiangguo Sun: The for the nodes in cluster one.
+
+350
+01:24:16.440 --> 01:24:22.650
+Xiangguo Sun: And also, we try to calculate the red note in cluster one.
+
+351
+01:24:24.570 --> 01:24:32.040
+Xiangguo Sun: cemetery in order to calculate the right node in Castle one you can find the numbers for the 12345.
+
+352
+01:24:34.980 --> 01:24:35.760
+Xiangguo Sun: and
+
+353
+01:24:38.070 --> 01:24:46.110
+Xiangguo Sun: we've found the massive value, so it seems to be fine 12345.
+
+354
+01:24:47.640 --> 01:24:52.680
+Xiangguo Sun: So, this would calculate we're finished at the first the first Community.
+
+355
+01:24:54.030 --> 01:25:04.890
+Xiangguo Sun: And then we need to cover another another Community you know right so in the country to, we need to find the intersex section of.
+
+356
+01:25:05.970 --> 01:25:13.320
+Xiangguo Sun: The offer handled and intersection of balloon node as a fighter Magnum.
+
+357
+01:25:14.580 --> 01:25:18.120
+Xiangguo Sun: And then calculate the total submission of that.
+
+358
+01:25:19.350 --> 01:25:24.330
+Xiangguo Sun: You know, basically so it's not difficult but it need your you know to.
+
+359
+01:25:24.870 --> 01:25:41.490
+Xiangguo Sun: To to take your need you to focus on on the inside, because you might miss it many similar concept right, so I highly recommend you guys to you know repeat this after you finish this tutorial and before the the final exam okay.
+
+360
+01:25:44.340 --> 01:25:44.940
+Xiangguo Sun: and
+
+361
+01:25:46.230 --> 01:25:57.090
+Xiangguo Sun: Another mother is the nutri information and I don't think they're smiling this final exam because the calculation of that might be a little different.
+
+362
+01:25:57.660 --> 01:26:11.550
+Xiangguo Sun: A little difficult, so if I did want you to calculate that maybe I will directly give you this equation and show you the manual does so you just need to know.
+
+363
+01:26:13.110 --> 01:26:20.850
+Xiangguo Sun: The value of that and the theoretical demonstrate that see another, but I don't think that my new over it with them, so you can just to be familiar with that okay.
+
+364
+01:26:24.120 --> 01:26:30.600
+Xiangguo Sun: yeah just be familiar because they Christians that data difficult if you want to truly understand this guy's meaning.
+
+365
+01:26:31.110 --> 01:26:48.720
+Xiangguo Sun: You need to run more advanced knowledge in the information theory, so you can take take some courses about that, but here i'm not going to tell you more about that, because then we'll a little difficult to understand.
+
+366
+01:26:49.950 --> 01:26:50.310
+Xiangguo Sun: Okay.
+
+367
+01:26:52.200 --> 01:26:58.440
+Xiangguo Sun: So here is Ah yes, here is an example here to calculate you know calculate.
+
+368
+01:26:59.670 --> 01:27:04.350
+Xiangguo Sun: The information on the military from the information right, so you just need to so.
+
+369
+01:27:05.940 --> 01:27:21.480
+Xiangguo Sun: If it did, in your exam maybe, just like go in this way, so we just need to follow in this way to tell me that to you know, took to assign a value here right, that is, the H a ll to send a letter here and the photo.
+
+370
+01:27:22.560 --> 01:27:26.490
+Xiangguo Sun: photo this equation to theoretical neutral information.
+
+371
+01:27:26.550 --> 01:27:27.270
+Xiangguo Sun: that's enough.
+
+372
+01:27:27.690 --> 01:27:31.170
+Xiangguo Sun: that's enough Okay, so in the same so we finished all.
+
+373
+01:27:33.330 --> 01:27:34.740
+Xiangguo Sun: content in this way.
+
+374
+01:27:35.760 --> 01:27:43.410
+Xiangguo Sun: Or, this is the way I, you know that the nurse awake are we don't have the lectures, but we still have online tutorial and the ultimate tutorial.
+
+375
+01:27:43.800 --> 01:28:01.560
+Xiangguo Sun: So that's I mean the Internet so fill in the next week or the week night I might introduce some cases study in our first project, you know some students want to know the result of research project right, so I might have some know less about that and also.
+
+376
+01:28:02.910 --> 01:28:14.460
+Xiangguo Sun: In this answer all your questions in the next few weeks, and if we still have some time I might introduce some basic idea about the link, in particular because.
+
+377
+01:28:15.210 --> 01:28:28.890
+Xiangguo Sun: That in web turn we tend to it go that the second project and the last night, what well when students asked me to choose not to collect some useful resources about.
+
+378
+01:28:29.610 --> 01:28:40.950
+Xiangguo Sun: The second project ah, I will also try to try to some of the photos are for you guys and the moon might release them in that's the way to target okay.
+
+379
+01:28:43.200 --> 01:28:55.590
+Xiangguo Sun: Some students that can be two more examples incidents returns next week yeah Okay, if you want, maybe I can supply business more example in specialist right yes wait.
+
+380
+01:28:57.210 --> 01:28:59.280
+Xiangguo Sun: What is he about.
+
+381
+01:29:00.780 --> 01:29:01.620
+Xiangguo Sun: A two.
+
+382
+01:29:03.270 --> 01:29:08.580
+Xiangguo Sun: Which slide you're asking the a to not understand what you're talking.
+
+383
+01:29:10.980 --> 01:29:30.450
+Xiangguo Sun: I mean that's okay that that assignment to it's just the project too fast for the link and redemption which will be elaborated in way to turn after that the public holiday and but I don't think you guys can hold the on that project, because there have been some.
+
+384
+01:29:31.560 --> 01:29:40.020
+Xiangguo Sun: Some some some some difficult test up to understand, for example, like to link the positive link and how to evaluate the results.
+
+385
+01:29:41.160 --> 01:29:42.210
+Xiangguo Sun: Last year.
+
+386
+01:29:43.350 --> 01:29:46.170
+Xiangguo Sun: Many students students how.
+
+387
+01:29:48.120 --> 01:30:05.610
+Xiangguo Sun: questions on project to but let's student has have problem on our President wanted, because the President and to might be a little difficult or unusual than feature to a real job trivial task.
+
+388
+01:30:06.990 --> 01:30:13.860
+Xiangguo Sun: yeah it's a big and little hard but, but nobody about that, and you know in this year, maybe change some.
+
+389
+01:30:14.940 --> 01:30:31.980
+Xiangguo Sun: Some content about project to to make the requirements more clear and to to make the task more more easy to to solve, so I will also talk about them in our next week Okay, so this is all about today's tutorial and thank you for attending.
+
+390
+01:30:34.050 --> 01:30:40.230
+Xiangguo Sun: If you have no other positions, maybe we can just live Okay, have a good day.
+
