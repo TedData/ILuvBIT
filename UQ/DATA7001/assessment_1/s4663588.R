@@ -1,0 +1,925 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# Introduction to R"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Overview"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "R is one of the most widely used open source tool for statistical computing. It has a huge community support, and a large number of packages have been contributed by the community.\n",
+    "\n",
+    "This Prac is aimed to teach the basics of R, which will serve as foundation for the future Pracs. The topics of R covered in this pracs include the following\n",
+    "* data structures\n",
+    "* filtering and data quality operations\n",
+    "* loops and conditional statements\n",
+    "* commonly used statistical functions\n",
+    "* basic plotting"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Instructions\n",
+    "<strong> This Prac is assessed, and the tasks are based on the demos taken during lab. </strong>\n",
+    "\n",
+    "Complete the tasks given. \n",
+    "* <strong>Please note that your code will be re-executed on new dataset files during marking. The new dataset will have the same \"Column Name\" as that of the current dataset - but the order of the columns can be different. Also the rows, and number of rows will change. Your code should give the correct answer for the new datasets as well. <u>So please don't hard-code the answers / row indexes / column indexes.</u> To reference a column you can use the column names instead of column index.</strong>\n",
+    "\n",
+    "Additional Note\n",
+    "* variable names and strings are case-sensitive in R\n",
+    "* Any updates regarding the Pracs will be posted on <strong>Piazza</strong>\n",
+    "* Your code will be tested on Version 4.x.x of R"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Submission\n",
+    "After completing the tasks, download the notebook as an R file to your local system. This can be done by \"File > Download as > R\". Rename the downloaded R file with your \"UQ Login-id\" - for example, `s4477608.R`\n",
+    "* Upload the downloaded file to jupyter in the same folder as that of this notebook, that is, inside \"Prac1\" folder.\n",
+    "* Submit the downloaded file to BB\n",
+    "\n",
+    "<strong> The R file uploaded to jupyter will be assessed automatically. So, it is very important to upload the R file to the correct location in jupyter, with the correct name ( as mentioned above ) - failing to which 0 will be awarded for this Prac. </strong>"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 1. Data Quality \n",
+    "Imported data would contain multiple inconsistencies and quality issues. The following tasks aims to provide an example of some of the inconsistencies and quality issues.\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Data can be imported from multiple sources like CSV, JSON, Relational Database, and so on. We will be dealing with simple CSV files. Below is shown a Sample Task, and sample solution to import a csv file."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "|<center> Sample TASK - 1</center>|\n",
+    "| ---- |\n",
+    "| Import data from \"unclean1.csv\" using `read.csv` function. Store the data into a variable called \"clean1\". Import data from iris1.csv into a variable called \"d1\". Note: first row of \"iris1.csv\" is the header|"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Place your answer here (Sample Solution)\n",
+    "clean1 = read.csv(\"datasets/unclean1.csv\", header=FALSE)\n",
+    "d1 = read.csv(\"datasets/iris1.csv\", header=TRUE)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Data Inconsistency"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "|<center>TASK</center>|\n",
+    "| ---- |\n",
+    "| The last row of \"clean1\" dataframe contains the column header. Assign the column header using the last row, and also remove the last row from the data frame. Store the result inside \"clean1\". |"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 2,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Place your answer here\n",
+    "end_row = clean1[nrow(clean1),]\n",
+    "colnames(clean1) = c(t(end_row))\n",
+    "clean1 = clean1[-nrow(clean1),]"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Data Type Mismatch\n",
+    "When the data is imported the data types assigned by default might not completely match the underlying data. \n",
+    "You can check the structure of the data using `str` function, and assign the correct data types using functions like `as.numeric`, `as.character`, `as.factor`, `as.integer`, ..."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "|<center>TASK</center>|\n",
+    "| ---- |\n",
+    "| Make a copy of \"d1\" data frame, and name it \"datatype1\". Sepal.Length, Sepal.Width, Petal.Length, Petal.Width columns should be of type numeric, and Species column should be of type character. Check if the columns of \"datatype1\" match their respective data types, fix the same if not correct.  |"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 3,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/html": [
+       "TRUE"
+      ],
+      "text/latex": [
+       "TRUE"
+      ],
+      "text/markdown": [
+       "TRUE"
+      ],
+      "text/plain": [
+       "[1] TRUE"
+      ]
+     },
+     "metadata": {},
+     "output_type": "display_data"
+    },
+    {
+     "data": {
+      "text/html": [
+       "TRUE"
+      ],
+      "text/latex": [
+       "TRUE"
+      ],
+      "text/markdown": [
+       "TRUE"
+      ],
+      "text/plain": [
+       "[1] TRUE"
+      ]
+     },
+     "metadata": {},
+     "output_type": "display_data"
+    },
+    {
+     "data": {
+      "text/html": [
+       "TRUE"
+      ],
+      "text/latex": [
+       "TRUE"
+      ],
+      "text/markdown": [
+       "TRUE"
+      ],
+      "text/plain": [
+       "[1] TRUE"
+      ]
+     },
+     "metadata": {},
+     "output_type": "display_data"
+    },
+    {
+     "data": {
+      "text/html": [
+       "TRUE"
+      ],
+      "text/latex": [
+       "TRUE"
+      ],
+      "text/markdown": [
+       "TRUE"
+      ],
+      "text/plain": [
+       "[1] TRUE"
+      ]
+     },
+     "metadata": {},
+     "output_type": "display_data"
+    },
+    {
+     "data": {
+      "text/html": [
+       "TRUE"
+      ],
+      "text/latex": [
+       "TRUE"
+      ],
+      "text/markdown": [
+       "TRUE"
+      ],
+      "text/plain": [
+       "[1] TRUE"
+      ]
+     },
+     "metadata": {},
+     "output_type": "display_data"
+    }
+   ],
+   "source": [
+    "# Place your answer here\n",
+    "datatype1 = d1\n",
+    "datatype1[,ncol(datatype1)] = as.character(datatype1[,ncol(datatype1)])\n",
+    "for (i in c(1:(ncol(datatype1)-1))) {datatype1[,i] = as.numeric(datatype1[,i])}\n",
+    "is.numeric(datatype1$Sepal.Length)\n",
+    "is.numeric(datatype1$Sepal.Width)\n",
+    "is.numeric(datatype1$Petal.Length)\n",
+    "is.numeric(datatype1$Petal.Width)\n",
+    "is.character(datatype1$Species)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Handling NA's for Arithmetic Operation\n",
+    "Arithmetic operations such as mean/sum might not perform as expected when the underlying data has missing values. There are many ways to handle missingness, and ignoring the NA's is one of the method."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "|<center>TASK</center>|\n",
+    "| ---- |\n",
+    "| Find the mean of \"Petal.Width\" column of \"clean1\". Note: consider using `na.rm` parameter of mean function to handle the NA's of this column. Store the result inside \"sum_narm\" |"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 4,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Place your answer here\n",
+    "type_character = as.character(clean1[,'Petal.Width'])\n",
+    "type_numeric = as.numeric(type_character)\n",
+    "sum_narm = mean(type_numeric,na.rm=T)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Data Missingness\n",
+    "There are many kind of missingness defined in R. Most common of those are `NA`, `NULL`, and `empty strings`. "
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "|<center>TASK</center>|\n",
+    "| ---- |\n",
+    "| Make a copy of \"d1\" data frame, and name it \"clean2\". Remove rows of \"clean2\" which contains missing values (NA, NULL, and empty strings) in any of its columns. |"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 5,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Place your answer here\n",
+    "clean2 = d1\n",
+    "clean2 = clean2[complete.cases(clean2),]"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Combining Data From JSON and CSV\n",
+    "In most situations, data needs to be combined from various sources like CSV, json, ... You can combine data frames loaded from different sources using `rbind` function, provided they have the same structure."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "|<center>TASK</center>|\n",
+    "| ---- |\n",
+    "| Combine contents of \"iris3.json\" and \"iris4.csv\" using `rbind` function, and store the resultant dataframe inside \"rbind1\". Note: you can import `JSON` data using `read_json` function of `jsonlite` package |"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 6,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Place your answer here\n",
+    "library(jsonlite)\n",
+    "iris3 = read_json('datasets/iris3.json', simplifyVector=TRUE)\n",
+    "iris4 = read.csv('datasets/iris4.csv', header=TRUE)\n",
+    "rbind1 = rbind(iris3,iris4)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Filtering Data"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "|<center>TASK</center>|\n",
+    "| ---- |\n",
+    "| Store the first 5 rows and the last 10 rows of \"d1\" inside \"select1\"|"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 7,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Place your answer here\n",
+    "first_five=d1[1:5,]\n",
+    "last_ten=d1[(nrow(d1)-9):nrow(d1),]\n",
+    "select1=rbind(first_five,last_ten)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "|<center>TASK</center>|\n",
+    "| ---- |\n",
+    "| Make a copy of \"d1\" data frame, and name it \"select2\". Remove all rows of \"select2\" whose Species is versicolor. |"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 8,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Place your answer here\n",
+    "select2 = subset(d1, Species != 'versicolor')"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "|<center>TASK</center>|\n",
+    "| ---- |\n",
+    "| Make a copy of \"d1\" data frame, and name it \"select3\". Set \"Petal.Length\" column values of \"select3\" data frame to 0 whose Species is setosa. |"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 9,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Place your answer here\n",
+    "select3 = d1\n",
+    "select3[select3$Sqecies == 'setosa', 'Petal.Length'] = 0"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 2. Factors\n",
+    "All categorical features should be stored as `factor` in R. Each category should be a `level` of that factor."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "|<center>TASK</center>|\n",
+    "| ---- |\n",
+    "| Given that there are 3 distinct species of iris - \"setosa\", \"versicolor\", \"virginica\", find the count of occurrence of each Species in \"select2\" using `table` function. Store the resultant count inside \"count1\" vector. Name of each element of the vector should be its corresponding Species. Hint: you have to convert the column into `factor` and mention the `levels` before you perform the count. |"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 10,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Place your answer here\n",
+    "count1 = table(select2$Species)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 3. User Defined Function"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "User-Defined function can be used to create functions which can perform custom operation."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "|<center>TASK</center>|\n",
+    "| ---- |\n",
+    "| Create a function called \"fun1\" which takes 2 matrix as input parameters (x1,x2). The function should return the sum of determinant of the matrices.|"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 11,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Place your answer here\n",
+    "fun1 = function(x1, x2){\n",
+    "    sum_matrix = det(x1) +det(x2)\n",
+    "    return (sum_matrix)\n",
+    "}"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 4. Common/Important Functions and Operations "
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Basic Arithmetic Operation"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "|<center>TASK</center>|\n",
+    "| ---- |\n",
+    "| Find the sum of \"Petal.Length\" column of \"d1\". Store the result inside vector \"sum1\" vector |"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 12,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Place your answer here\n",
+    "sum1 = sum(d1[['Petal.Length']])"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Apply Function\n",
+    "Apply function can be used to perform operations on rows / columns of data frame or matrices"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "|<center>TASK</center>|\n",
+    "| ---- |\n",
+    "| Find the \"sum/median\" (SUM divided by MEDIAN) of all the numeric columns of \"d1\" using `apply` function. Store the result inside \"apply1\". Note: you have to use `is.numeric` to find if a column is numeric or not. |"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 13,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Place your answer here\n",
+    "for(i in 1:length(d1)){\n",
+    "    if(is.numeric(d1[[i]])){c=c(1:i)}\n",
+    "}\n",
+    "apply1 = apply(d1[,c],2,function(x){{return (sum(x)/median(x))}})"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Aggregate Function\n",
+    "Aggregate function proves useful when we want to perform aggregation on each and every categories of data. \n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "|<center>TASK</center>|\n",
+    "| ---- |\n",
+    "| Find the sum of \"Petal.Length\",\"Petal.Width\", \"Sepal.Length\", \"Sepal.Width\" of \"d1\" for each Species using `aggregate` function. The result should be a data frame where the column name are the names of numeric columns of \"d1\" and the row names are the names of the Species. Store the result inside \"agg1\" |"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 14,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Place your answer here\n",
+    "agg1 = aggregate(d1[,c(1:4)], by = list(d1$Species), FUN = sum)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "|<center>TASK</center>|\n",
+    "| ---- |\n",
+    "| Load \"script1.R\" using `source` function.<strong> You will be making use of the objects created inside this script in subsequent tasks. Please note that the contents of the objects inside this script will be changed during marking. So please dont hard code your answers.</strong>  |"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 15,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Place your answer here\n",
+    "source(\"script1.R\")"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 5. Lists\n",
+    "\n",
+    "List can store any type of objects inside it. It is mainly used to return multiple objects from a function."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "|<center>TASK</center>|\n",
+    "| ---- |\n",
+    "| Create a function called \"fun1\" which takes 2 matrix as input parameters (x1,x2). It should return a list where the 1st element of list is the first matrix, 2nd element of the list is the 2nd matrix, 3rd element of the list is the vector which contain the sum of determinant of the two matrices.  |"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 16,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Place your answer here\n",
+    "fun1 = function(x1, x2){\n",
+    "    sum_matrix = det(x1) +det(x2)\n",
+    "    out = list(x1, x2,sum_matrix)\n",
+    "    return (out)\n",
+    "}"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### lapply & sapply\n",
+    "lapply and sapply can be used to iterate through elements of the list to perform some operation."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "|<center>TASK</center>|\n",
+    "| ---- |\n",
+    "| Find the sum of determinant of matrices present inside the \"list1\" (loaded from \"script1.R\") using `lapply`. Store the result inside vector \"lapply1\". Perform the same operation using `sapply` and store the result inside \"sapply1\" variable. Note: you have to check if an element of the list is matrix or not.  |"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 17,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[1] FALSE\n",
+      "[1] TRUE\n",
+      "[1] FALSE\n"
+     ]
+    },
+    {
+     "data": {
+      "text/html": [
+       "<ol>\n",
+       "\t<li>FALSE</li>\n",
+       "\t<li>TRUE</li>\n",
+       "\t<li>FALSE</li>\n",
+       "</ol>\n"
+      ],
+      "text/latex": [
+       "\\begin{enumerate}\n",
+       "\\item FALSE\n",
+       "\\item TRUE\n",
+       "\\item FALSE\n",
+       "\\end{enumerate}\n"
+      ],
+      "text/markdown": [
+       "1. FALSE\n",
+       "2. TRUE\n",
+       "3. FALSE\n",
+       "\n",
+       "\n"
+      ],
+      "text/plain": [
+       "[[1]]\n",
+       "[1] FALSE\n",
+       "\n",
+       "[[2]]\n",
+       "[1] TRUE\n",
+       "\n",
+       "[[3]]\n",
+       "[1] FALSE\n"
+      ]
+     },
+     "metadata": {},
+     "output_type": "display_data"
+    }
+   ],
+   "source": [
+    "# Place your answer here\n",
+    "for(i in 1:length(list1)){print(is.matrix(list1[[i]]))}\n",
+    "lapply(list1, is.matrix)\n",
+    "lapply1 = lapply(list1[2], det)\n",
+    "aspply1 = sapply(list1, is.matrix)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 6. Loops\n",
+    "\n",
+    "Loops can be used to \n",
+    "* execute tasks \"n\" number of times\n",
+    "* iterate through elements of an object\n",
+    "* and so on"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "|<center>TASK</center>|\n",
+    "| ---- |\n",
+    "| Find the sum of determinant of matrices present inside the \"list1\" (loaded from \"script1.R\") using `for` loop. Store the result inside vector \"for1\". Perform the same operation using `while` loop. Store the result inside \"while1\". Note: you have to check if an element of the list is matrix or not.  |"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 19,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Place your answer here\n",
+    "for1 = 0\n",
+    "for(i in length(list1)){\n",
+    "    if(is.matrix(list1[[i]])){ \n",
+    "        for1 = for1 + det(list1[[i]])\n",
+    "    }\n",
+    "}\n",
+    "\n",
+    "while1 = 0\n",
+    "i = 1\n",
+    "while(i <= length(list1)){\n",
+    "    if(is.matrix(list1[[i]])){\n",
+    "        while1 = while1 + det(list1[[i]])\n",
+    "    }\n",
+    "    i = i + 1\n",
+    "}"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 7. Sampling"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Sampling is the process where only a subset of the data is selected for analysis. This may be due to\n",
+    "* data being extremely large to process\n",
+    "* challenges in collecting the entire data\n",
+    "\n",
+    "\n",
+    "There are different types of sampling like\n",
+    "* Simple Random Sampling\n",
+    "* Weighted Sampling\n",
+    "* Stratified Sampling\n",
+    "* Systematic Sampling\n",
+    "* ...\n",
+    "\n",
+    "Below tasks are based on sampling"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Simple Random Sampling"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "|<center>TASK</center>|\n",
+    "| ---- |\n",
+    "| Sample 80 rows `without replacement` from \"d1\". Store the result inside \"sample1\" data frame. Perform the same operation `with replacement` and store the result inside \"sample2\" data frame. Set the seed (using `set.seed` function) to 55 for both the cases. Note: perform sample operation using `sample` function  |"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 20,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Place your answer here\n",
+    "set.seed(55)\n",
+    "sample1 = d1[sample(nrow(d1), 80, FALSE),]\n",
+    "sample2 = d1[sample(nrow(d1), 80, TRUE),]"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Weighted Sampling"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "|<center>TASK</center>|\n",
+    "| ---- |\n",
+    "| Sample with replacement, 80 data points from \"d1\", such that versicolor data points have twice the weight as that of setosa, and virginica data points have twice the weight as that of versicolor. Combine the sampled rows inside \"sample3\" data frame. Set the seed to 55. Note: perform sample operation using `sample` function, and weights can be given using `prob` parameter of sample function |"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 21,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Place your answer here\n",
+    "set.seed(55)\n",
+    "sample3 = d1[sample(nrow(d1),80, replace = TRUE, prob = c(1,2,4)[as.integer(d1[['Species']])]),]"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Repeated Weighted Sampling"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "|<center>TASK</center>|\n",
+    "| ---- |\n",
+    "| Perform the above weighted sampling for 100 iterations, finding the mean of \"Sepal.Length\" for each iteration. Store the means inside \"weighted_iterative\" vector. The seed for each iteration is the iteration number itself. |"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 22,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Place your answer here\n",
+    "weighted_iterative=c()\n",
+    "for (i in c(1:100)) {\n",
+    "    set.seed(i)\n",
+    "    sample3 = d1[sample(nrow(d1),20, replace = TRUE, prob = c(1,2,4)[as.integer(d1[['Species']])]),]\n",
+    "    weighted_iterative = c(weighted_iterative, mean(sample3$Sepal.Length))\n",
+    "}"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Stratified Sampling"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "|<center>TASK</center>|\n",
+    "| ---- |\n",
+    "| Sample with replacement - 10 values from each of the three Species of \"d1\" data. Store the sampled data inside \"stratified_setosa\", \"stratified_versicolor\", and \"stratified_virginica\" data frames respectively. Set the seed to 55 for sampling. Perform sample operation using `sample` function, and use `prob` parameter of sample function to sample from a particular species alone. Hint: all data points with a corresponding weight of 0 will not be sampled. |"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 23,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Place your answer here\n",
+    "set.seed(55)\n",
+    "stratified_setosa = d1[sample(nrow(d1),10, replace = TRUE, prob = c(1,0,0)[as.integer(d1[['Species']])]),]\n",
+    "stratified_versicolor = d1[sample(nrow(d1),10, replace = TRUE, prob = c(0,1,0)[as.integer(d1[['Species']])]),]\n",
+    "stratified_virginica = d1[sample(nrow(d1),10, replace = TRUE, prob = c(0,0,1)[as.integer(d1[['Species']])]),]\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Repeated Stratified Sampling"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "|<center>TASK</center>|\n",
+    "| ---- |\n",
+    "| Perform the above stratified sampling for 100 iterations, finding the mean of \"Sepal.Length\" for each iteration - for each species. The seed for each iteration is the iteration number itself. Store the sampled means inside \"setosa_mean\", \"versicolor_mean\", \"virginica_mean\" vectors respectively. Note: after 100 iteratations, there will be 100 values in each of the  vectors |"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 24,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Place your answer here\n",
+    "setosa_mean=c()\n",
+    "versicolor_mean=c()\n",
+    "virginica_mean=c()\n",
+    "for (i in c(1:100)) {\n",
+    "    set.seed(i)\n",
+    "    stratified_setosa = d1[sample(nrow(d1),10, replace = TRUE, prob = c(1,0,0)[as.integer(d1[['Species']])]),]\n",
+    "    stratified_versicolor = d1[sample(nrow(d1),10, replace = TRUE, prob = c(0,1,0)[as.integer(d1[['Species']])]),]\n",
+    "    stratified_virginica = d1[sample(nrow(d1),10, replace = TRUE, prob = c(0,0,1)[as.integer(d1[['Species']])]),]\n",
+    "\n",
+    "    setosa_mean = c(setosa_mean, mean(stratified_setosa$Sepal.Length))\n",
+    "    versicolor_mean = c(versicolor_mean, mean(stratified_versicolor$Sepal.Length))\n",
+    "    virginica_mean = c(virginica_mean, mean(stratified_virginica$Sepal.Length))\n",
+    "}"
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "R",
+   "language": "R",
+   "name": "ir"
+  },
+  "language_info": {
+   "codemirror_mode": "r",
+   "file_extension": ".r",
+   "mimetype": "text/x-r-source",
+   "name": "R",
+   "pygments_lexer": "r",
+   "version": "3.4.4"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 2
+}
