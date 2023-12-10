@@ -1,0 +1,56 @@
+mean(as.numeric(oswego$age), na.rm=T) #the mean of the ages is 44.28
+
+oswego[24,'onsetdate']='18-Apr'
+library(tidyr)
+oswego_new <- separate(oswego, onsetdate, into = c("onset_day", "onset_month"), sep = "-")
+head(oswego_new)
+
+oswego_new <- separate(oswego_new, address, into = c('address',"suburb_name", "state", "postcode"), sep = ",", remove = TRUE)
+
+ill_postcode=as.data.frame(table(oswego_new[oswego_new[,'ill']=='yes',]$postcode)) 
+ill_postcode[ill_postcode[,c(2)]==max(ill_postcode[,2]),]
+#4010 and 4006 postcode has the most occurrences of illness
+
+(1) as.data.frame(table(oswego_new$postcode)) 
+(2) SELECT postcode, COUNT(*) FROM OswegoTutorial GROUP BY postcode
+
+aggregate(oswego_new$age, by = list(oswego_new$postcode), mean, na.rm=T)
+yes, a inaccurate data is input
+
+The type of left is quantitative.
+
+the department of hr has the highest proportion. 
+the department of management has the lowest.
+
+hist(HR_comma_sep$last_evaluation[HR_comma_sep$left==1], col=rgb(1,0,0,0.5),main="Histogram for last_evaluation", xlab="last_evaluation")
+hist(HR_comma_sep$last_evaluation[HR_comma_sep$left==0], col=rgb(0,0,1,0.5),add=TRUE)
+legend("topright", c("Not Left","Left"),fill=c(rgb(0,0,1,0.5), rgb(1,0,0,0.5)))
+The histogram reveals the distribution of staff dismission is multimodal. This histogram reveals high rate of staff dismission in the group of low evaluation score and high evaluation score.
+
+par(mfrow=c(3,1))
+
+hist(HR_comma_sep$average_montly_hours[HR_comma_sep[HR_comma_sep$left==1,]$sales=='hr'],col=rgb(1,0,0,0.5),main="Histogram for average_montly_hours by departments", xlab="average_montly_hours",freq=FALSE)
+hist(HR_comma_sep$average_montly_hours[HR_comma_sep[HR_comma_sep$left==1,]$sales=='management'],col=rgb(0,0,1,0.5),add=TRUE,freq=FALSE)
+legend("topright", c("management","hr"),fill=c(rgb(0,0,1,0.5), rgb(1,0,0,0.5)))
+
+hist(HR_comma_sep$satisfaction_level[HR_comma_sep[HR_comma_sep$left==1,]$sales=='hr'],col=rgb(1,0,0,0.5),main="Histogram for satisfaction_level by departments", xlab="satisfaction_level",freq=FALSE)
+hist(HR_comma_sep$satisfaction_level[HR_comma_sep[HR_comma_sep$left==1,]$sales=='management'],col=rgb(0,0,1,0.5),add=TRUE,freq=FALSE)
+legend("topright", c("management","hr"),fill=c(rgb(0,0,1,0.5), rgb(1,0,0,0.5)))
+
+hist(HR_comma_sep$last_evaluation[HR_comma_sep[HR_comma_sep$left==1,]$sales=='hr'],col=rgb(1,0,0,0.5),main="Histogram for last_evaluation by departments", xlab="last_evaluation",freq=FALSE)
+hist(HR_comma_sep$last_evaluation[HR_comma_sep[HR_comma_sep$left==1,]$sales=='management'],col=rgb(0,0,1,0.5),add=TRUE,freq=FALSE)
+legend("topright", c("management","hr"),fill=c(rgb(0,0,1,0.5), rgb(1,0,0,0.5)))
+These two departments are different
+
+hist(HR_comma_sep$number_project[HR_comma_sep$left==1],col=rgb(1,0,0,0.5),main="Histogram for number_project by Left", xlab="number_project",freq=FALSE)
+hist(HR_comma_sep$number_project[HR_comma_sep$left==0],col=rgb(0,0,1,0.5),add=TRUE,freq=FALSE)
+legend("topright", c("Not Left","Left"),fill=c(rgb(0,0,1,0.5), rgb(1,0,0,0.5)))
+
+best_experienced=HR_comma_sep[HR_comma_sep$time_spend_company>3&HR_comma_sep$last_evaluation>=0.8,]
+best_experienced
+
+plot(best_experienced$time_spend_company[best_experienced$left==0],best_experienced$last_evaluation[best_experienced$left==0],main="Scatter Plot for time_spend_company vs \n Last Evalation by Left", xlab="time_spend_company",ylab="Last Evaluation",col=rgb(0,0,1,0.5))
+points(best_experienced$time_spend_company[best_experienced$left==1],best_experienced$last_evaluation[best_experienced$left==1],col=rgb(1,0,0,0.5))
+legend("bottomright", c("Not Left","Left"),pch=c(1,1),col=c(rgb(0,0,1,0.5), rgb(1,0,0,0.5)))
+we can see, the employee of 'best' almost leaves at 4 - 6 years, after 7 year, the most employee does not leave.
+

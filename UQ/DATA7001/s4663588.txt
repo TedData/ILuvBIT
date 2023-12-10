@@ -1,0 +1,5 @@
+su s4663588
+
+ssh clientnode.zones.eait.uq.edu.au
+
+cd fs_prac
