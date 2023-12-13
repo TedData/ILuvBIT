@@ -1,0 +1,20 @@
+Which of the following statements about outlier is wrong:
+
+A: An outlier is a data point that lies outside the overall pattern in a distribution.
+
+B: An outlier is an experimental error.
+
+C: An outlier in a data set can strongly distort the results of most statistical analyses.
+
+D: An outlier can be classified involve two categories, artificial and natural.
+
+
+Which of the following statements about data transformation is wrong:
+
+A: Data transformation is the process of changing the format, structure, or values of data
+
+B: Change the type of data is one of the ways to transform data.
+
+C: Data transformation is often time-consuming, costly, and slow. 
+
+D: Scripting is one of the ways to transform data.
