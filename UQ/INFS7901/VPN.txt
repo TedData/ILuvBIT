@@ -1,0 +1,14 @@
+搜索： Cisco Anyconnect Secure Mobility Client
+搜索： FileZilla
+
+phpmyadmin
+user='s4663588',
+password='123456',
+
+ssh s4663588@73fd7c79.zones.eait.uq.edu.au
+cd uwsgi
+sudo systemctl restart uwsgi.service
+
+主机： s4663588@73fd7c79.zones.eait.uq.edu.au
+用户名： s4663588	
+端口： 22
