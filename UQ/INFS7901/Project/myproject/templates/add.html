@@ -1,0 +1,136 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="content-section">
+  <form method="POST" action="">
+    {{ form.hidden_tag() }}
+    <fieldset class="form-group">
+      <legend class="border-bottom mb-4">Add Vehicle Information</legend>
+      
+      <!-- Car_ID -->
+      <div class="form-group">
+        {{ form.V_ID.label(class="form-control-label") }}
+        {% if form.V_ID.errors %}
+        {{ form.V_ID(class="form-control form-control-lg is-invalid") }}
+        <div class="invalid-feedback">
+          {% for error in form.V_ID.errors %}
+          <span>{{ error }}</span>
+          {% endfor %}
+        </div>
+        {% else %}
+        {{ form.V_ID(class="form-control form-control-lg") }}
+        {% endif %}
+      </div>
+
+      <!-- B_ID -->
+      <div class="form-group">
+        {{ form.B_ID.label(class="form-control-label") }}
+        {% if form.B_ID.errors %}
+        {{ form.B_ID(class="form-control form-control-lg is-invalid") }}
+        <div class="invalid-feedback">
+          {% for error in form.B_ID.errors %}
+          <span>{{ error }}</span>
+          {% endfor %}
+        </div>
+        {% else %}
+        {{ form.B_ID(class="form-control form-control-lg") }}
+        {% endif %}
+      </div>
+
+      <!-- Model -->
+      <div class="form-group">
+        {{ form.Model.label(class="form-control-label") }}
+        {% if form.Model.errors %}
+        {{ form.Model(class="form-control form-control-lg is-invalid") }}
+        <div class="invalid-feedback">
+          {% for error in form.Model.errors %}
+          <span>{{ error }}</span>
+          {% endfor %}
+        </div>
+        {% else %}
+        {{ form.Model(class="form-control form-control-lg") }}
+        {% endif %}
+      </div>
+
+      <!-- Kilometers -->
+      <div class="form-group">
+        {{ form.Kilometers.label(class="form-control-label") }}
+        {% if form.Kilometers.errors %}
+        {{ form.Kilometers(class="form-control form-control-lg is-invalid") }}
+        <div class="invalid-feedback">
+          {% for error in form.Kilometers.errors %}
+          <span>{{ error }}</span>
+          {% endfor %}
+        </div>
+        {% else %}
+        {{ form.Kilometers(class="form-control form-control-lg") }}
+        {% endif %}
+      </div>
+
+      <!-- Price -->
+      <div class="form-group">
+        {{ form.Price.label(class="form-control-label") }}
+        {% if form.Price.errors %}
+        {{ form.Price(class="form-control form-control-lg is-invalid") }}
+        <div class="invalid-feedback">
+          {% for error in form.Price.errors %}
+          <span>{{ error }}</span>
+          {% endfor %}
+        </div>
+        {% else %}
+        {{ form.Price(class="form-control form-control-lg") }}
+        {% endif %}
+      </div>
+
+      <!-- Year -->
+      <div class="form-group">
+        {{ form.C_Year.label(class="form-control-label") }}
+        {% if form.C_Year.errors %}
+        {{ form.C_Year(class="form-control form-control-lg is-invalid") }}
+        <div class="invalid-feedback">
+          {% for error in form.C_Year.errors %}
+          <span>{{ error }}</span>
+          {% endfor %}
+        </div>
+        {% else %}
+        {{ form.C_Year(class="form-control form-control-lg") }}
+        {% endif %}
+      </div>
+
+      <!-- Accident -->
+      <div class="form-group">
+        {{ form.Accident.label(class="form-control-label") }}
+        {% if form.Accident.errors %}
+        {{ form.Accident(class="form-control form-control-lg is-invalid") }}
+        <div class="invalid-feedback">
+          {% for error in form.Accident.errors %}
+          <span>{{ error }}</span>
+          {% endfor %}
+        </div>
+        {% else %}
+        {{ form.Accident(class="form-control form-control-lg") }}
+        {% endif %}
+      </div>
+
+      <!-- Brand -->
+      <div class="form-group">
+        {{ form.Car_brand.label(class="form-control-label") }}
+        {% if form.Car_brand.errors %}
+        {{ form.Car_brand(class="form-control form-control-lg is-invalid") }}
+        <div class="invalid-feedback">
+          {% for error in form.Car_brand.errors %}
+          <span>{{ error }}</span>
+          {% endfor %}
+        </div>
+        {% else %}
+        {{ form.Car_brand(class="form-control form-control-lg") }}
+        {% endif %}
+      </div>
+    </fieldset>
+
+    <!-- Submit -->
+    <div class="form-group">
+      {{ form.submit(class="btn btn-outline-info") }}
+    </div>
+  </form>
+</div>
+{% endblock content %}

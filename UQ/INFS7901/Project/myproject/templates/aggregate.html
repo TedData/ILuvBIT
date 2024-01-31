@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+{% block content %}
+    {% for post in posts %}
+        <article class="media content-section">
+          <div class="media-body">
+            <div class="article-metadata">
+              <a class="mr-2" href="#">{{'TOTAL'}}</a>
+            </div>
+            <p class="article-content">{{'The total number of vehicles owned is', post.C }}</p>
+          </div>
+        </article>
+    {% endfor %}
+{% endblock content %}
+
+
+
