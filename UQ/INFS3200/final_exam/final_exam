@@ -1,0 +1,90 @@
+2020-2
+q1
+(a)
+HF
+Completeness: if any i belongs to F. and exist Fi belongs to F, then i belongs to Fi.
+Disjointness: if Fi, Fj belong to F, and i is not equal j, then Fi intersceting Fj is empty.
+Reconstruction: F is equal to F1 union F2 union ... union Fi.
+VF
+Completeness: A is equal to A1 union A2 union ... union An.
+
+(c)
+Approach 1 site 2: S -> site 1.
+Approach 2 site 1: all unique values of R.A -> site 2
+			site 2: S semi-join R.A -> site1.
+
+q2
+(a) 
+synchronous: Voting and Read-any Write-all
+asynchronous: Primary sit and Peer-to-Peer replication.
+
+(b)
+Suppose we have N copies. whenever there is a need to update them, we update the majority of copies. say m(m>N/2) copies. The version number of each copy is updated at the same time too . When we read, we need to read at least n copies such tahat n+ m > N.
+
+Yes. In the voting approach, we need to read more than one copy. Adopt the Read-any Write-all approach so we only need to read one copy at a time. we rarely need to write because update queries are rare.
+
+q3
+(a)
+Advantage: OLAP queries are usually aggregate queries. Materialized viwes make queries much faster and response times are interactive. Disadvantages of data warehouse: Data warehouse can be outdated relatively quickly Invreased storage costs. Materialized viwes must be updated when underlying data talbes are modified.
+
+In a star schema.all information is placed in the fact table and the lookup tables that have a direct reference to the fact table. In a snowflake schema, the first-level lookup tables may have their lookup tables. So, the information is dispersed over the entire system. Star schema results in high data redundancy and duplication. snoflake schema ensures a very low level of data redundancy.
+
+q5
+(a)
+Schema heterogeneity
+S1 Employee(ID, name, position, salary)
+S2 Worker(Eid, name) Postion(Pid, Eid, salary)
+Data type heterogeneity
+Employee ID is a string or an integer.
+Value heterogeneity
+The 'Employee' could be called 'Worker' in another system
+Semantic heterogeneity
+Salary is hourly salary or is weekly salary
+
+q6
+(b)
+Jaccard coefficient. When measuring string similarity using JD, strings are broken into a set of Q-grams. The order of elements in a set does not matter. The edit distance between the same names is large if the first and last names are written in a different order. Edit Distance. Last and first names are written in the same order. ED is defined to be the minimum number of operations to transform one string to another. However, a minor type can cause a huge change in Jaccard distance since their Q-grams are completely different. eg:'Emily Smith' vs "Emmily Smith"
+
+(b)
+insert, delete or substitute one character
+
+q7
+(a)
+k-anonymity is a key concept that was introduced to address the risk of reidentification of anonymised data through linkage to other datasets.
+(b)
+After processing the data with the k-anonymity technique, each rocord from the adversary's knowledge corresponds to at least k records of the table containing sensitive information. However, the sensitive values of the k records can be identical. In such a cass, the sensitive value can still be predicted
+(c
+We do not publish information that does highly depend on any particular individual record. We can introduce some randomness to the data, which does not affect the data utility while giving each individual refutability. We may use a Laplace Distribution to introduce the noises.)
+
+2019-2
+q1
+(a)
+because S.A is a foreign key, we fragment the S table just in the same way as R, and make sure that the fragmentation after fragmentation is refactored is still the tables S
+(b)
+Approach 1: site2: S -> site1
+approach 2: site1: all unique values of R.A -> site 2
+			site2: S semi-join R.A -> site1
+
+q2
+(a)
+a data cube in a data warehouse is a multidimensioanl structure used to represent data along with some measure of interest.
+
+(b)
+The slice is an operation that selects one specific demension from a given data cube and provides a new subcube, The dice is an operation that selects two or more dimensions from a given data cube and provides a nwe subcube. Pivoting operation is one of the OLAP operations, it is essentially rotating the data cube in order to perceive the cube from a dfferent dimension.
+
+(c)
+Database updates must lock data resources. Large scale aggregation reports lock many resources for a long tmes. The data warehouse is historical, the existing business data in the past will not be updated generally, but will always be there waiting for various access select
+
+(d)
+Advantages OLAP queries are usuall aggregate queries materialized viwes make queries much faster and response times are interactive Disadvantages datawarehouse can be outdated relatively quickly, increased storage costs materialized views must be updated when underlying data tables are modified.
+
+q4
+(c)
+Jaccard coefficient, when measuring string similarity using JD, strings are broken into a set of Q-grams, The order of elements in a set does not matter. The edit distance between the same names is large if the first and last names are written in a different order. Edit Distance. Last and first names are written in the same order. ED is difined to be the minimum number of operations to transfrom one string to another. Howere, a minor type can cause a huge change in Jaccard distance since their Q-grams are completely different. eg "Emily Smith" vs 'Emmily Smith'
+
+q6
+(a)
+K-anonymity is a key concept that was introduced to address the risk of reidentification of anonymised data through linkage to other datasets. Individual values of attributes are replaced with a broader category. eg, the value 10 of the attribute age can be replaced by under 20
+
+(b)
+We do not publish information that does highly depend on any particular individual record. We can introduce some randomness to the data, which does not affect the data utility while giving each individual refutability. We may use a Laplace Distribution to introduce the noises.
