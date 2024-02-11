@@ -1,0 +1,1 @@
+import randomimport matplotlib.pyplot as pltN = 1000x_res = []y_res = []x0 = 1y0 = 1y = y0random.seed(N)for i in range(N*2):    x = random.expovariate(y + 1)    y = random.expovariate(x + 1)    x_res.append(x)    y_res.append(y)x_res = x_res[-N:]y_res = y_res[-N:]plt.clf()plt.plot(x_res, y_res, 'b.', alpha = 0.4)plt.show()
