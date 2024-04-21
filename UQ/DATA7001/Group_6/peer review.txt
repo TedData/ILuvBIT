@@ -1,8 +1,0 @@
-Group 3: It is very novel to animate the average time every year and consumption, so that we can observe the changes from year to year and the popularity of different kinds of games more clearly. In the aspect of story telling, you can further dig out the conclusion from the analysis and get a deeper conclusion. However, all the conclusions are found from the figure, and the display technique is a little simple, Cross-validation can be carried out to obtain more convincing results. The final conclusion is that 'Cluster 1 players are focused on playing free games' and' Cluster 2 paying players can play multiple games'. Cluster 2 and Cluster 1 have inclusion relationship, free players can only play free games, paying players can play both free games and paid games, so the number of cluster 2 players playing games must be higher than free players.
-
-
-Group 5: First, the impact of GDP on forest cover is very novel. Secondly, clustering of the three planes can make the analysis more comprehensive by obtaining multi-dimensional data. However, as the conclusions drawn directly from the graph are not convincing enough, it is suggested to cross-verify the conclusions with other provinces as a training set and a testing set, and then calculate the error rate, which makes the conclusions more convincing.
-
-
-Group 1: The distribution of different computer languages under different conditions can be clearly seen from the three bar charts. Finally, the conclusion is obtained through cross-validation, which is very convincing. It is recommended to add references to the end of the PPT.
-
